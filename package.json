@@ -1,0 +1,36 @@
+{
+  "name": "fetraning",
+  "version": "1.0.0",
+  "description": "实战练习，飞速提升（加入星球可获取所有源码，及实现过程说明）.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node_modules/.bin/webpack --config webpack.config.js",
+    "start": "node_modules/.bin/webpack-dev-server --config webpack.config.js",
+    "release": "node_modules/.bin/webpack --config webpack.release.config.js",
+    "serve-release": "node_modules/.bin/webpack-dev-server --config webpack.release.config.js --content-base /dist"
+  },
+  "keywords": [
+    "cesium",
+    "webpack",
+    "example"
+  ],
+  "author": {
+    "name": "giscafer",
+    "url": "http://giscafer.com"
+  },
+  "homepage": "https://fedemo.duapp.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "strip-pragma-loader": "^1.0.0",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^1.0.0-beta.3",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "dependencies": {
+  }
+}

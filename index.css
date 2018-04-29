@@ -1,0 +1,56 @@
+﻿#map,
+body,
+html {
+    height: 100%
+}
+
+#banner,
+#map {
+    width: 100%;
+    background-color: #fff
+}
+
+#legend,
+#map {
+    position: absolute
+}
+
+#banner,
+#legend {
+    background-repeat: no-repeat
+}
+
+body,
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden
+}
+
+.fontfix {
+    font-family: Arial, "微软雅黑", "Hiragino Sans GB", "新宋体", sans-serif;
+    -webkit-font-smoothing: antialiased
+}
+
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+#banner {
+    height: 0;
+    background-position: 0 0
+}
+
+#mapcontainer {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+.leaflet-container {
+    background: #fff
+}

@@ -1,4 +1,7 @@
-﻿var geoq = {
+﻿
+var centerPoint = [35.63452, 109.132287];
+var _cityData = [];
+var geoq = {
     colors: ["#e73336", "#dbe900", "#00e92f", "#00e6ff", "#0050ff"].reverse(),
     init: function () {
         this._map(),
@@ -7,13 +10,13 @@
     },
     _map: function () {
         this.map = L.map("map",
-         {
-            center: [35.63452, 109.132287],
-            zoom: 4,
-            minZoom: 1,
-            maxZoom: 16,
-            attributionControl: !1
-        });
+            {
+                center: centerPoint,
+                zoom: 5,
+                minZoom: 1,
+                maxZoom: 16,
+                attributionControl: !1
+            });
         // .setView([1.05463, 87.85938], 3);
         var t = "http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer";
         L.tileLayer.esriTileLayer(t, {
@@ -21,9 +24,9 @@
             zIndex: 0
         }).addTo(this.map);
         var e = L.control.attribution();
-        e.addAttribution("前端学堂demo"),
-        e.addAttribution('<a href="http://felearn.com">智图GeoQ</a>'),
-        e.addTo(this.map)
+        e.addAttribution("那些我去过的城市"),
+            e.addAttribution('<a href="http://giscafer.com" target="_blank">@giscafer</a>'),
+            e.addTo(this.map)
     },
     _data: function () {
         var t = this.util
@@ -40,14 +43,24 @@
     _data2: function () {
         var t = this.util
             , e = this;
-        t.getText("data/data.json", function (o) {
+        t.getText("data/data.json?v=" + new Date().getTime(), function (o) {
             o = JSON.parse(o);
+            _cityData = o.rows;
+            console.log(_cityData)
             var r = e._parse(o);
             e._points(r),
                 e._flow(r)
         }, function (t) {
             alert("数据下载失败!")
         })
+    },
+    getCityData(cityName) {
+        for (let i = 0; i < _cityData.length; i++) {
+            var item = _cityData[i];
+            if (item['city'] === cityName) {
+                return item;
+            }
+        }
     },
     _parse: function (t) {
         for (var e, n, o, r, i, a = t.rows, s = {
@@ -59,7 +72,7 @@
             countries: []
         }, l = -(1 / 0), c = 1 / 0, u = a.length, f = 50, p = 0; u > p; p++)
             e = a[p],
-                n = e["城市"],
+                n = e["city"],
                 i = +e["times"],
                 o = +e.X_COORD,
                 r = +e.Y_COORD,
@@ -69,23 +82,43 @@
                     s.count[n] = i),
                 s.geo[n] = [o, r],
                 s.countries.push(n);
-        return s.geo[s.from] = [107.226562, 34.016242],
+        return s.geo[s.from] = centerPoint,
             s.colors = this.util.gradient(this.colors, f),
             s.count.min = c,
             s.count.max = l,
             s
     },
     _points: function (t) {
-        for (var e, n, o = t.countries, r = 0, i = o.length; i > r; r++)
-            e = t.geo[o[r]],
-                n = L.latLng(e[1], e[0]),
-                L.circleMarker(n, {
-                    color: "#ffc32c",
-                    opacity: 0,
-                    weight: 1,
-                    fillColor: "#ffc32c",
-                    fillOpacity: 1
-                }).setRadius(3).addTo(this.map)
+        for (var e, n, o = t.countries, r = 0, i = o.length; i > r; r++) {
+            e = t.geo[o[r]];
+            var city = this.getCityData(o[r]);
+            n = L.latLng(e[1], e[0]);
+            L.circleMarker(n, {
+                color: "#ffc32c",
+                opacity: 0,
+                weight: 1,
+                fillColor: "#ffc32c",
+                fillOpacity: 1
+            }).setRadius(3).addTo(this.map);
+            var myIcon = L.icon({
+                iconUrl: './lib/leaflet-0.7.3/images/marker-icon.png',
+                iconAnchor: [20, 20],
+            });
+            // 透明marker作为点击事件
+            var marker=L.marker(n, {
+                color: "#ffc32c",
+                opacity: 0,
+                weight: 1,
+                fillColor: "#ffc32c",
+                fillOpacity: 1,
+                icon:myIcon
+            }).addTo(this.map).bindPopup("<b>" + city['city'] +
+            "</b><br><br>" + city['remark']);
+            marker.on('click',function(e){
+                console.log(e);
+            })
+
+        }
     },
     _flow: function (t) {
         var e = (new L.CanvasLayer.flow).addTo(this.map)

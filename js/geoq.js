@@ -113,7 +113,7 @@ var geoq = {
                 fillOpacity: 1,
                 icon:myIcon
             }).addTo(this.map).bindPopup("<b>" + city['city'] +
-            "</b><br><br>" + city['remark']);
+            "</b><br>"+city['date']+"<br>" + city['remark']);
             marker.on('click',function(e){
                 console.log(e);
             })

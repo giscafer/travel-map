@@ -113,7 +113,10 @@ var geoq = {
                 fillOpacity: 1,
                 icon:myIcon
             }).addTo(this.map).bindPopup("<b>" + city['city'] +
-            "</b><br>"+city['date']+"<br>" + city['remark']);
+            "</b><br>"+city['date']+"<br>" + city['remark'])+
+            "<br>" +'<a href="javascript:;">图片</a>';
+
+            // click event handler
             marker.on('click',function(e){
                 console.log(e);
             })

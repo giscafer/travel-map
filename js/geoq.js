@@ -1,4 +1,5 @@
 ﻿
+
 var centerPoint = [35.63452, 109.132287];
 var _cityData = [];
 var geoq = {
@@ -54,14 +55,6 @@ var geoq = {
             alert("数据下载失败!")
         })
     },
-    getCityData(cityName) {
-        for (let i = 0; i < _cityData.length; i++) {
-            var item = _cityData[i];
-            if (item['city'] === cityName) {
-                return item;
-            }
-        }
-    },
     _parse: function (t) {
         for (var e, n, o, r, i, a = t.rows, s = {
             from: "中国",
@@ -91,7 +84,9 @@ var geoq = {
     _points: function (t) {
         for (var e, n, o = t.countries, r = 0, i = o.length; i > r; r++) {
             e = t.geo[o[r]];
-            var city = this.getCityData(o[r]);
+            var city = getCityData(o[r]);
+            var urls = city.imgs || [];
+            var picHtml = generatePicHtml(city['city'], urls);
             n = L.latLng(e[1], e[0]);
             L.circleMarker(n, {
                 color: "#ffc32c",
@@ -105,16 +100,21 @@ var geoq = {
                 iconAnchor: [20, 20],
             });
             // 透明marker作为点击事件
-            var marker=L.marker(n, {
+            var marker = L.marker(n, {
                 color: "#ffc32c",
                 opacity: 0,
                 weight: 1,
                 fillColor: "#ffc32c",
                 fillOpacity: 1,
-                icon:myIcon
-            }).addTo(this.map).bindPopup("<b>" + city['city'] +
-            "</b><br>"+city['date']+"<br>" + city['remark']);
-            marker.on('click',function(e){
+                icon: myIcon
+            }).addTo(this.map).bindPopup(
+                "<b>" + city['city'] +
+                "</b><br>" +
+                city['date'] +
+                "<br>" + city['remark'] +
+                "<br>" + picHtml);
+            // '<a href="javascript:;" onclick="viewPic(\'' + o[r] + '\')">图片</a>');
+            marker.on('click', function (e) {
                 console.log(e);
             })
 
@@ -241,9 +241,41 @@ geoq.util = {
         return "string" == typeof t && n.test(t.toUpperCase()) && (t = t.slice(1).toUpperCase(),
             3 === t.length ? o = [16 * e[t[0]] + e[t[0]], 16 * e[t[1]] + e[t[1]], 16 * e[t[2]] + e[t[2]]] : 6 === t.length && (o = [16 * e[t[0]] + e[t[1]], 16 * e[t[2]] + e[t[3]], 16 * e[t[4]] + e[t[5]]])),
             o
-    }
+    },
 },
     L.DomEvent.on(document, "DOMContentLoaded", function () {
         geoq.init(),
             geoq.iframe()
     });
+
+window.getCityData = function (cityName) {
+    for (let i = 0; i < _cityData.length; i++) {
+        var item = _cityData[i];
+        if (item['city'] === cityName) {
+            return item;
+        }
+    }
+}
+window.viewPic = function (cityName) {
+    var city = getCityData(cityName);
+
+    var galley = document.getElementById('galley');
+    var viewer = new Viewer(galley, {
+        url: 'data-original',
+        hidden: function () {
+            viewer.destroy();
+        }
+    });
+    viewer.show();
+};
+
+window.generatePicHtml = function (cityName, urls) {
+    var _html = '<div id="galley"><ul class="pictures" onclick="viewPic(\'' + cityName + '\')">';
+    for (var i = 0; i < urls.length; i++) {
+        var url = urls[i];
+        _html += '<li><img data-original="' + url + '" src="' + url + '" alt="图片预览"></li>';
+    }
+    _html += '</ul></div></div>';
+
+    return _html;
+}

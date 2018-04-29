@@ -102,6 +102,7 @@
             "city": "福建省武夷山市",
             "times": "2",
             "date": "2016年5月",
+            "imgs": ["./data/pictures/20160430.jpg","./data/pictures/20160430.jpg","./data/pictures/20160430.jpg","./data/pictures/20160430.jpg","./data/pictures/20160430.jpg"],
             "remark": "Forestar，矿证项目团队集体旅游。武夷山很美，茶很香",
             "X_COORD": "117.959779",
             "Y_COORD": "27.660599"
@@ -111,6 +112,7 @@
             "city": "广东省广州市",
             "times": "2",
             "date": "2016年8月",
+            "imgs": ["./data/pictures/20180113.jpg"],
             "remark": "第二份工作，结束两年北漂，广州第一份工作",
             "X_COORD": "113.272674",
             "Y_COORD": "23.157259"
@@ -119,7 +121,8 @@
             "country": "中国",
             "city": "广东省清远市",
             "times": "2",
-            "date": "2017年10月",
+            "date": "2017年11月",
+            "imgs": ["./data/pictures/20171112.jpg"],
             "remark": "1ziton，公司三周年会，清远徒步+年会，徒步当天台风天气，还是顺利翻越十几个山头，总程>10公里",
             "X_COORD": "113.055344",
             "Y_COORD": "23.695911"

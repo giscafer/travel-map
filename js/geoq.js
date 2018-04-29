@@ -5,9 +5,9 @@ var _cityData = [];
 var geoq = {
     colors: ["#e73336", "#dbe900", "#00e92f", "#00e6ff", "#0050ff"].reverse(),
     init: function () {
-        this._map(),
-            this._data2(),
-            this._visit();
+        this._map();
+        this._data2();
+        // this._visit();
     },
     _map: function () {
         this.map = L.map("map",
@@ -97,7 +97,7 @@ var geoq = {
             }).setRadius(3).addTo(this.map);
             var myIcon = L.icon({
                 iconUrl: './lib/leaflet-0.7.3/images/marker-icon.png',
-                iconAnchor: [20, 20],
+                iconAnchor: [20, 20]
             });
             // 透明marker作为点击事件
             var marker = L.marker(n, {
@@ -107,17 +107,17 @@ var geoq = {
                 fillColor: "#ffc32c",
                 fillOpacity: 1,
                 icon: myIcon
-            }).addTo(this.map).bindPopup(
-                "<b>" + city['city'] +
-                "</b><br>" +
-                city['date'] +
-                "<br>" + city['remark'] +
-                "<br>" + picHtml);
-            // '<a href="javascript:;" onclick="viewPic(\'' + o[r] + '\')">图片</a>');
-            marker.on('click', function (e) {
+            }).addTo(this.map)
+                // 点击气泡弹窗
+                .bindPopup(
+                    "<h3>" + city['city'] +
+                    "</h3>" +
+                    city['date'] +
+                    "<br>" + city['remark'] +
+                    "<br>" + picHtml);
+            /* marker.on('click', function (e) {
                 console.log(e);
-            })
-
+            }) */
         }
     },
     _flow: function (t) {
@@ -272,8 +272,12 @@ window.viewPic = function (cityName) {
 window.generatePicHtml = function (cityName, urls) {
     var _html = '<div id="galley"><ul class="pictures" onclick="viewPic(\'' + cityName + '\')">';
     for (var i = 0; i < urls.length; i++) {
-        var url = urls[i];
-        _html += '<li><img data-original="' + url + '" src="' + url + '" alt="图片预览"></li>';
+        var url = './data/pictures/' + urls[i];
+        var display='style="display:inline-block"';
+        if(i>5){
+            display='style="display:none"';
+        }
+        _html += '<li '+display+'><img data-original="' + url + '" src="' + url + '" alt="图片预览"></li>';
     }
     _html += '</ul></div></div>';
 

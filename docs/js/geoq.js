@@ -47,7 +47,7 @@ var geoq = {
         t.getText("data/data.json?v=" + new Date().getTime(), function (o) {
             o = JSON.parse(o);
             _cityData = o.rows;
-            console.log(_cityData)
+            // console.log(_cityData)
             var r = e._parse(o);
             e._points(r),
                 e._flow(r)

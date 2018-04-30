@@ -32,7 +32,7 @@
             "times": "2",
             "date": "2010~2014",
             "imgs":["xinong_1.jpg"],
-            "remark": "大学4年，人生第一次离开家那么远，第一次坐长途火车36个小时，这里遇到来自五湖四海的同学们，一起学习成长。↓ 爆张宿舍照",
+            "remark": "大学4年，人生第一次离开家那么远，第一次坐长途火车36个小时，这里遇到来自五湖四海的同学们，一起学习成长。",
             "X_COORD": "108.077977",
             "Y_COORD": "34.269512"
         },
@@ -41,9 +41,28 @@
             "city": "陕西西安市",
             "times": "2",
             "date": "2010~2014",
-            "remark": "读书四年，经常在西安玩",
+            "imgs": [
+                "xian_0.jpg"
+            ],
+            "remark": "读书四年，常往西安，一座有中国古代文化的城市",
             "X_COORD": "108.941433",
             "Y_COORD": "34.343424"
+        },
+        {
+            "country": "中国",
+            "city": "陕西省咸阳市乾县——乾陵",
+            "times": "2",
+            "date": "2011年4月",
+            "imgs": [
+                "xianyang_0.jpg",
+                "xianyang_1.jpg",
+                "xianyang_2.jpg",
+                "xianyang_3.jpg",
+                "xianyang_4.jpg"
+            ],
+            "remark": "清明节游乾陵，武则天无字碑，唐高宗墓，有唐永泰公主墓，乾陵地宫……",
+            "X_COORD": "108.217844",
+            "Y_COORD": "34.578448"
         },
         {
             "country": "中国",
@@ -75,6 +94,7 @@
             "times": "2",
             "date": "2014年5月",
             "imgs": [
+                "taibaishan_1.jpg",
                 "taibaishan_2.jpg",
                 "taibaishan_3.jpg",
                 "taibaishan_4.jpg",
@@ -103,7 +123,13 @@
             "city": "重庆市",
             "times": "2",
             "date": "2014年6月",
-            "remark": "重庆2日游、火锅、洋人街",
+            "imgs":[
+                "chungking_1.jpg",
+                "chungking_2.jpg",
+                "chungking_3.jpg",
+                "chungking_4.jpg"
+            ],
+            "remark": "重庆2日游、火锅、解放碑、洋人街，很有特色的轻轨",
             "X_COORD": "106.583918",
             "Y_COORD": "29.560395"
         },
@@ -130,7 +156,11 @@
             "city": "福建省福州市",
             "times": "2",
             "date": "2016年4月",
-            "remark": "第二次出差，驻场福州地矿局，生活工作于福州一个多月，小伙伴较多:小宋、小爱、小郭、大郭、女生两位，旭哥、岩哥。",
+            "imgs": [
+                "fuzhou_1.jpg",
+                "fuzhou_2.jpg"
+            ],
+            "remark": "第二次出差，驻场福州地矿局，生活工作于福州一个多月，小伙伴较多:小宋、小爱、小郭、大郭、女生两位，旭哥、岩哥等。",
             "X_COORD": "119.295872",
             "Y_COORD": "26.082421"
         },
@@ -139,7 +169,13 @@
             "city": "福建省武夷山市",
             "times": "2",
             "date": "2016年5月",
-            "imgs": ["wuyishan_20160430.jpg"],
+            "imgs": [
+                "wuyishan_0.jpg",
+                "wuyishan_1.jpg",
+                "wuyishan_2.jpg",
+                "wuyishan_3.jpg",
+                "wuyishan_4.jpg"
+            ],
             "remark": "Forestar，矿证项目团队集体旅游。武夷山很美，茶很香",
             "X_COORD": "117.959779",
             "Y_COORD": "27.660599"
@@ -159,7 +195,11 @@
             "city": "广东省清远市",
             "times": "2",
             "date": "2017年11月",
-            "imgs": ["qingyuan_20171112.jpg"],
+            "imgs": [
+                "qingyuan_20171112.jpg",
+                "qingyuan_1.jpg",
+                "qingyuan_2.jpg"
+            ],
             "remark": "1ziton，公司三周年会，清远徒步+年会，徒步当天台风天气，还是顺利翻越十几个山头，总程>10公里",
             "X_COORD": "113.055344",
             "Y_COORD": "23.695911"

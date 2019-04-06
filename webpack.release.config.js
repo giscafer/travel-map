@@ -14,7 +14,7 @@ module.exports = [{
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'docs'),
 
         // Needed by  for multiline strings
         sourcePrefix: ''
@@ -69,6 +69,7 @@ module.exports = [{
             { from: 'js', to: 'js' },
             { from: 'data', to: 'data' },
             { from: 'lib', to: 'lib' },
+            { from: 'favicon.ico', to: 'favicon.ico' },
         ]),
         new webpack.DefinePlugin({
             // Define relative base path in  for loading assets

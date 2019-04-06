@@ -65,12 +65,15 @@ html {
     justify-content: start;
     white-space: pre-wrap;
     flex-wrap: wrap;
+    min-width: 262px;
 }
-.pictures::after{
+
+.pictures::after {
     display: table;
-    content:' ';
+    content: ' ';
     clear: both;
 }
+
 .pictures>li {
     margin: 0 5px 2px 0;
     border: 1px solid transparent;
@@ -98,4 +101,8 @@ html {
 ul.pictures li img {
     width: 80px;
     height: 80px;
+}
+
+.leaflet-popup-content {
+    width: auto !important;
 }

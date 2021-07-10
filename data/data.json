@@ -1,266 +1,256 @@
 {
-    "fields": [
-        "country",
-        "city",
-        "times",
-        "X_COORD",
-        "Y_COORD"
-    ],
-    "rows": [
-        {
-            "country": "中国",
-            "city": "广西北海市",
-            "times": "3",
-            "date": "",
-            "imgs":["beihai_1.jpg"],
-            "remark": "Home",
-            "X_COORD": "109.132287",
-            "Y_COORD": "21.450901"
-        },
-        {
-            "country": "中国",
-            "city": "广西南宁市",
-            "times": "1",
-            "date": "",
-            "remark": "~",
-            "X_COORD": "108.36517",
-            "Y_COORD": "22.81985"
-        },
-        {
-            "country": "中国",
-            "city": "西北农林科技大学",
-            "times": "2",
-            "date": "2010~2014",
-            "imgs":["xinong_1.jpg"],
-            "remark": "大学4年，人生第一次离开家那么远，第一次坐长途火车36个小时，感受到了南北文化风俗差异，遇到来自五湖四海的同学们，一起学习成长。",
-            "X_COORD": "108.077977",
-            "Y_COORD": "34.269512"
-        },
-        {
-            "country": "中国",
-            "city": "陕西西安市",
-            "times": "2",
-            "date": "2010~2014",
-            "imgs": [
-                "xian_0.jpg"
-            ],
-            "remark": "读书四年，常往西安，一座有中国古代文化的城市",
-            "X_COORD": "108.941433",
-            "Y_COORD": "34.343424"
-        },
-        {
-            "country": "中国",
-            "city": "陕西省咸阳市乾县——乾陵",
-            "times": "2",
-            "date": "2011年4月",
-            "imgs": [
-                "xianyang_0.jpg",
-                "xianyang_1.jpg",
-                "xianyang_2.jpg",
-                "xianyang_3.jpg",
-                "xianyang_4.jpg"
-            ],
-            "remark": "清明节游乾陵，武则天无字碑，唐高宗墓，有唐永泰公主墓，乾陵地宫……",
-            "X_COORD": "108.217844",
-            "Y_COORD": "34.578448"
-        },
-        {
-            "country": "中国",
-            "city": "陕西延安市",
-            "times": "2",
-            "date": "2012年4月",
-            "remark": "3日游、路线：黄帝陵——户口瀑布——延安市，延安革命根据地历史文化感受较深",
-            "imgs": [
-                "yanan_1.jpg",
-                "yanan_2.jpg",
-                "yanan_3.jpg",
-                "yanan_0.jpg",
-                "yanan_4.jpg",
-                "yanan_5.jpg",
-                "yanan_6.jpg",
-                "yanan_7.jpg",
-                "yanan_8.jpg",
-                "yanan_9.jpg",
-                "yanan_10.jpg",
-                "yanan_11.jpg"
-                
-             ],
-            "X_COORD": "109.493847",
-            "Y_COORD": "36.654068"
-        },
-        {
-            "country": "中国",
-            "city": "陕西宝鸡市——太白山",
-            "times": "2",
-            "date": "2014年5月",
-            "imgs": [
-                "taibaishan_1.jpg",
-                "taibaishan_2.jpg",
-                "taibaishan_3.jpg",
-                "taibaishan_4.jpg",
-                "taibaishan_5.jpg",
-                "taibaishan_6.jpg",
-                "taibaishan_7.jpg",
-                "taibaishan_7_1.jpg",
-                "taibaishan_8.jpg",
-                "taibaishan_9.jpg",
-                "taibaishan_10.jpg",
-                "taibaishan_11.jpg",
-                "taibaishan_12.jpg",
-                "taibaishan_13.jpg",
-                "taibaishan_14.jpg",
-                "taibaishan_15.jpg",
-                "taibaishan_16.jpg",
-                "taibaishan_18.jpg",
-                "taibaishan_19.jpg"
-             ],
-            "remark": "太白山2日游，海拔3771米，国家重点风景名胜区，国家级自然保护区",
-            "X_COORD": "107.80",
-            "Y_COORD": "34.103965"
-        },
-        {
-            "country": "中国",
-            "city": "重庆市",
-            "times": "2",
-            "date": "2014年6月",
-            "imgs":[
-                "chungking_1.jpg",
-                "chungking_2.jpg",
-                "chungking_3.jpg",
-                "chungking_4.jpg"
-            ],
-            "remark": "重庆2日游、火锅、解放碑、洋人街，很有特色的轻轨",
-            "X_COORD": "106.583918",
-            "Y_COORD": "29.560395"
-        },
-        {
-            "country": "中国",
-            "city": "北京市",
-            "times": "2",
-            "date": "2014~2016",
-            "remark": "北京工作，第一份工作，北漂两年",
-            "X_COORD": "116.399286",
-            "Y_COORD": "39.907454"
-        },
-        {
-            "country": "中国",
-            "city": "新疆乌鲁木齐市",
-            "times": "2",
-            "date": "2015年9月",
-            "remark": "Forestar，第一次出差，驻场乌市3周左右，住一间2室1厅1厨1卫的房子，一起的人员有龙哥、洋哥、冬康，我们自己做饭，写代码。\n\n 感受到新疆的时差，公斤为单位，去看了大巴扎",
-            "X_COORD": "87.528442",
-            "Y_COORD": "43.842618"
-        },
-        {
-            "country": "中国",
-            "city": "福建省福州市",
-            "times": "2",
-            "date": "2016年4月",
-            "imgs": [
-                "fuzhou_1.jpg",
-                "fuzhou_2.jpg"
-            ],
-            "remark": "第二次出差，驻场福州地矿局，生活工作于福州一个多月，小伙伴较多:小宋、小爱、小郭、大郭、女生两位，旭哥、岩哥等。",
-            "X_COORD": "119.295872",
-            "Y_COORD": "26.082421"
-        },
-        {
-            "country": "中国",
-            "city": "福建省武夷山市",
-            "times": "2",
-            "date": "2016年5月",
-            "imgs": [
-                "wuyishan_0.jpg",
-                "wuyishan_1.jpg",
-                "wuyishan_2.jpg",
-                "wuyishan_3.jpg",
-                "wuyishan_4.jpg"
-            ],
-            "remark": "Forestar，矿证项目团队集体旅游。武夷山很美，茶很香",
-            "X_COORD": "117.959779",
-            "Y_COORD": "27.660599"
-        },
-        {
-            "country": "中国",
-            "city": "广东省广州市",
-            "times": "2",
-            "date": "2016年8月",
-            "imgs": [
-                "gz_2.jpg",
-                "gz_3.jpg",
-                "gz_4.jpg"
-            ],
-            "remark": "第二份工作，结束两年北漂，2016年8月开始在广州的第一份工作（图为广州塔488米观景台）",
-            "X_COORD": "113.272674",
-            "Y_COORD": "23.157259"
-        },
-        {
-            "country": "中国",
-            "city": "广东省清远市",
-            "times": "2",
-            "date": "2017年11月",
-            "imgs": [
-                "qingyuan_20171112.jpg",
-                "qingyuan_1.jpg",
-                "qingyuan_2.jpg"
-            ],
-            "remark": "1ziton，公司三周年会，清远徒步+年会，徒步当天台风天气，还是顺利翻越十几个山头，总程>10公里",
-            "X_COORD": "113.055344",
-            "Y_COORD": "23.695911"
-        },
-        {
-            "country": "中国",
-            "city": "广东省深圳市",
-            "times": "2",
-            "date": "2019年1月",
-            "imgs": [
-                
-            ],
-            "remark": "世界之窗一日游",
-            "X_COORD": "113.9699202775955",
-            "Y_COORD": "22.5370306234353"
-        },
-        {
-            "country": "中国",
-            "city": "广东省佛山市——清晖园",
-            "times": "2",
-            "date": "2019年3月",
-            "imgs": [
-                "foshan_201903_1.jpg",
-                "foshan_201903_2.jpg",
-                "foshan_201903_3.jpg"
-            ],
-            "remark": "4人（星海、秀彬、锐亮）佛山顺德游，目的为了吃和聊天",
-            "X_COORD": "113.24993",
-            "Y_COORD": "22.83851"
-        },
-        {
-            "country": "中国",
-            "city": "广东省珠海市",
-            "times": "2",
-            "date": "2019年5月",
-            "imgs": [
-                "zhuhai_1.jpg",
-                "zhuhai_2.jpg",
-                "zhuhai_3.jpg"
-            ],
-            "remark": "从珠海去澳门，又回珠海游玩",
-            "X_COORD": "113.5766800000",
-            "Y_COORD": "22.2707300000"
-        },
-        {
-            "country": "中国",
-            "city": "澳门",
-            "times": "2",
-            "date": "2019年5月",
-            "imgs": [
-                "macao_1.jpg",
-                "macao_3.jpg",
-                "macao_2.jpg"
-            ],
-            "remark": "第一次去澳门，随便逛了一下大三巴和赌场",
-            "X_COORD": "113.5491300000",
-            "Y_COORD": "22.1987500000"
-        }
-    ]
+  "fields": ["country", "city", "times", "X_COORD", "Y_COORD"],
+  "rows": [
+    {
+      "country": "中国",
+      "city": "广西北海市",
+      "times": "3",
+      "date": "",
+      "imgs": ["beihai_1.jpg"],
+      "remark": "Home",
+      "X_COORD": "109.132287",
+      "Y_COORD": "21.450901"
+    },
+    {
+      "country": "中国",
+      "city": "广西南宁市",
+      "times": "1",
+      "date": "",
+      "remark": "~",
+      "X_COORD": "108.36517",
+      "Y_COORD": "22.81985"
+    },
+    {
+      "country": "中国",
+      "city": "西北农林科技大学",
+      "times": "2",
+      "date": "2010~2014",
+      "imgs": ["xinong_1.jpg"],
+      "remark": "大学4年，人生第一次离开家那么远，第一次坐长途火车36个小时，感受到了南北文化风俗差异，遇到来自五湖四海的同学们，一起学习成长。",
+      "X_COORD": "108.077977",
+      "Y_COORD": "34.269512"
+    },
+    {
+      "country": "中国",
+      "city": "陕西西安市",
+      "times": "2",
+      "date": "2010~2014",
+      "imgs": ["xian_0.jpg"],
+      "remark": "读书四年，常往西安，一座有中国古代文化的城市",
+      "X_COORD": "108.941433",
+      "Y_COORD": "34.343424"
+    },
+    {
+      "country": "中国",
+      "city": "陕西省咸阳市乾县——乾陵",
+      "times": "2",
+      "date": "2011年4月",
+      "imgs": [
+        "xianyang_0.jpg",
+        "xianyang_1.jpg",
+        "xianyang_2.jpg",
+        "xianyang_3.jpg",
+        "xianyang_4.jpg"
+      ],
+      "remark": "清明节游乾陵，武则天无字碑，唐高宗墓，有唐永泰公主墓，乾陵地宫……",
+      "X_COORD": "108.217844",
+      "Y_COORD": "34.578448"
+    },
+    {
+      "country": "中国",
+      "city": "陕西延安市",
+      "times": "2",
+      "date": "2012年4月",
+      "remark": "3日游、路线：黄帝陵——户口瀑布——延安市，延安革命根据地历史文化感受较深",
+      "imgs": [
+        "yanan_1.jpg",
+        "yanan_2.jpg",
+        "yanan_3.jpg",
+        "yanan_0.jpg",
+        "yanan_4.jpg",
+        "yanan_5.jpg",
+        "yanan_6.jpg",
+        "yanan_7.jpg",
+        "yanan_8.jpg",
+        "yanan_9.jpg",
+        "yanan_10.jpg",
+        "yanan_11.jpg"
+      ],
+      "X_COORD": "109.493847",
+      "Y_COORD": "36.654068"
+    },
+    {
+      "country": "中国",
+      "city": "陕西宝鸡市——太白山",
+      "times": "2",
+      "date": "2014年5月",
+      "imgs": [
+        "taibaishan_1.jpg",
+        "taibaishan_2.jpg",
+        "taibaishan_3.jpg",
+        "taibaishan_4.jpg",
+        "taibaishan_5.jpg",
+        "taibaishan_6.jpg",
+        "taibaishan_7.jpg",
+        "taibaishan_7_1.jpg",
+        "taibaishan_8.jpg",
+        "taibaishan_9.jpg",
+        "taibaishan_10.jpg",
+        "taibaishan_11.jpg",
+        "taibaishan_12.jpg",
+        "taibaishan_13.jpg",
+        "taibaishan_14.jpg",
+        "taibaishan_15.jpg",
+        "taibaishan_16.jpg",
+        "taibaishan_18.jpg",
+        "taibaishan_19.jpg"
+      ],
+      "remark": "太白山2日游，海拔3771米，国家重点风景名胜区，国家级自然保护区",
+      "X_COORD": "107.80",
+      "Y_COORD": "34.103965"
+    },
+    {
+      "country": "中国",
+      "city": "重庆市",
+      "times": "2",
+      "date": "2014年6月",
+      "imgs": [
+        "chungking_1.jpg",
+        "chungking_2.jpg",
+        "chungking_3.jpg",
+        "chungking_4.jpg"
+      ],
+      "remark": "重庆2日游、火锅、解放碑、洋人街，很有特色的轻轨",
+      "X_COORD": "106.583918",
+      "Y_COORD": "29.560395"
+    },
+    {
+      "country": "中国",
+      "city": "北京市",
+      "times": "2",
+      "date": "2014~2016",
+      "remark": "北京工作，第一份工作，北漂两年",
+      "X_COORD": "116.399286",
+      "Y_COORD": "39.907454"
+    },
+    {
+      "country": "中国",
+      "city": "新疆乌鲁木齐市",
+      "times": "2",
+      "date": "2015年9月",
+      "remark": "Forestar，第一次出差，驻场乌市3周左右，住一间2室1厅1厨1卫的房子，一起的人员有龙哥、洋哥、冬康，我们自己做饭，写代码。\n\n 感受到新疆的时差，公斤为单位，去看了大巴扎",
+      "X_COORD": "87.528442",
+      "Y_COORD": "43.842618"
+    },
+    {
+      "country": "中国",
+      "city": "福建省福州市",
+      "times": "2",
+      "date": "2016年4月",
+      "imgs": ["fuzhou_1.jpg", "fuzhou_2.jpg"],
+      "remark": "第二次出差，驻场福州地矿局，生活工作于福州一个多月，小伙伴较多:小宋、小爱、小郭、大郭、女生两位，旭哥、岩哥等。",
+      "X_COORD": "119.295872",
+      "Y_COORD": "26.082421"
+    },
+    {
+      "country": "中国",
+      "city": "福建省武夷山市",
+      "times": "2",
+      "date": "2016年5月",
+      "imgs": [
+        "wuyishan_0.jpg",
+        "wuyishan_1.jpg",
+        "wuyishan_2.jpg",
+        "wuyishan_3.jpg",
+        "wuyishan_4.jpg"
+      ],
+      "remark": "Forestar，矿证项目团队集体旅游。武夷山很美，茶很香",
+      "X_COORD": "117.959779",
+      "Y_COORD": "27.660599"
+    },
+    {
+      "country": "中国",
+      "city": "广东省广州市",
+      "times": "2",
+      "date": "2016年8月",
+      "imgs": ["gz_2.jpg", "gz_3.jpg", "gz_4.jpg"],
+      "remark": "第二份工作，结束两年北漂，2016年8月开始在广州的第一份工作（图为广州塔488米观景台）",
+      "X_COORD": "113.272674",
+      "Y_COORD": "23.157259"
+    },
+    {
+      "country": "中国",
+      "city": "广东省清远市",
+      "times": "2",
+      "date": "2017年11月",
+      "imgs": ["qingyuan_20171112.jpg", "qingyuan_1.jpg", "qingyuan_2.jpg"],
+      "remark": "1ziton，公司三周年会，清远徒步+年会，徒步当天台风天气，还是顺利翻越十几个山头，总程>10公里",
+      "X_COORD": "113.055344",
+      "Y_COORD": "23.695911"
+    },
+    {
+      "country": "中国",
+      "city": "广东省深圳市",
+      "times": "2",
+      "date": "2019年1月",
+      "imgs": [],
+      "remark": "世界之窗一日游",
+      "X_COORD": "113.9699202775955",
+      "Y_COORD": "22.5370306234353"
+    },
+    {
+      "country": "中国",
+      "city": "广东省佛山市——清晖园",
+      "times": "2",
+      "date": "2019年3月",
+      "imgs": [
+        "foshan_201903_1.jpg",
+        "foshan_201903_2.jpg",
+        "foshan_201903_3.jpg"
+      ],
+      "remark": "4人（星海、秀彬、锐亮）佛山顺德游，目的为了吃和聊天",
+      "X_COORD": "113.24993",
+      "Y_COORD": "22.83851"
+    },
+    {
+      "country": "中国",
+      "city": "广东省珠海市",
+      "times": "2",
+      "date": "2019年5月",
+      "imgs": ["zhuhai_1.jpg", "zhuhai_2.jpg", "zhuhai_3.jpg"],
+      "remark": "从珠海去澳门，又回珠海游玩",
+      "X_COORD": "113.5766800000",
+      "Y_COORD": "22.2707300000"
+    },
+    {
+      "country": "中国",
+      "city": "澳门",
+      "times": "2",
+      "date": "2019年5月",
+      "imgs": ["macao_1.jpg", "macao_3.jpg", "macao_2.jpg"],
+      "remark": "第一次去澳门，随便逛了一下大三巴和赌场",
+      "X_COORD": "113.5491300000",
+      "Y_COORD": "22.1987500000"
+    },
+    {
+      "country": "中国",
+      "city": "长沙",
+      "times": "2",
+      "date": "2021年6月",
+      "imgs": ["./hunan/xingshaxian.jpeg"],
+      "remark": "出差长沙，长沙县",
+      "X_COORD": "113.088728",
+      "Y_COORD": "28.247636"
+    },
+    {
+      "country": "中国",
+      "city": "张家界",
+      "times": "2",
+      "date": "2021年7月",
+      "imgs": ["./hunan/zhangjiajie.jpeg"],
+      "remark": "出差张家界，张家界国家森林公园附近酒店封闭开发18天，风景优美，天气凉快。",
+      "X_COORD": "110.441264",
+      "Y_COORD": "29.321075"
+    }
+  ]
 }

@@ -238,19 +238,44 @@
       "times": "2",
       "date": "2021年6月",
       "imgs": ["./hunan/xingshaxian.jpeg"],
-      "remark": "出差长沙，长沙县",
+      "remark": "出差长沙，长沙县，瞿记的小龙虾不错",
       "X_COORD": "113.088728",
       "Y_COORD": "28.247636"
     },
     {
       "country": "中国",
-      "city": "张家界",
+      "city": "张家界新琵琶溪宾馆",
       "times": "2",
       "date": "2021年7月",
       "imgs": ["./hunan/zhangjiajie.jpeg"],
       "remark": "出差张家界，张家界国家森林公园附近酒店封闭开发18天，风景优美，天气凉快。",
       "X_COORD": "110.441264",
       "Y_COORD": "29.321075"
+    },
+    {
+      "country": "中国",
+      "city": "张家界武陵源金鞭溪",
+      "times": "2",
+      "date": "2021年7月17日",
+      "imgs": [
+        "./hunan/wulingyuan1.jpeg",
+        "./hunan/wulingyuan2.jpeg",
+        "./hunan/wulingyuan3.jpeg",
+        "./hunan/wulingyuan4.jpeg"
+      ],
+      "remark": "工具组团队下班后首次入景区，18:00后免费进福利，空气不错，山水优美",
+      "X_COORD": "110.476504",
+      "Y_COORD": "29.348445"
+    },
+    {
+      "country": "中国",
+      "city": "张家界武陵区千古情",
+      "times": "2",
+      "date": "2021年7月16日",
+      "imgs": ["./hunan/qianguqing1.jpeg", "./hunan/qianguqing2.jpeg"],
+      "remark": "第一次看千古情表演，故事+特效，身临其境感不错。",
+      "X_COORD": "110.57958",
+      "Y_COORD": "29.354341"
     }
   ]
 }

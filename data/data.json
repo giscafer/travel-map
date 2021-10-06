@@ -263,7 +263,7 @@
         "./hunan/wulingyuan3.jpeg",
         "./hunan/wulingyuan4.jpeg"
       ],
-      "remark": "工具组团队下班后首次入景区，18:00后免费进福利，空气不错，山水优美",
+      "remark": "工具组团队下班后首次入景区，项目组有18:00后免费进景区的福利，空气不错，山水优美",
       "X_COORD": "110.476504",
       "Y_COORD": "29.348445"
     },
@@ -276,6 +276,22 @@
       "remark": "第一次看千古情表演，故事+特效，身临其境感不错。",
       "X_COORD": "110.57958",
       "Y_COORD": "29.354341"
+    },
+    {
+      "country": "中国",
+      "city": "张家界天门山",
+      "times": "2",
+      "date": "2021年7月23日",
+      "imgs": [
+        "./hunan/tianmenshan1.jpeg",
+        "./hunan/tianmenshan2.jpeg",
+        "./hunan/tianmenshan3.jpeg",
+        "./hunan/tianmenshan4.jpeg",
+        "./hunan/tianmenshan5.jpeg"
+      ],
+      "remark": "天门山，值得玩2天，最美的空中花园和天界仙境。",
+      "X_COORD": "110.494183",
+      "Y_COORD": "29.054063"
     }
   ]
 }

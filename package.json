@@ -1,7 +1,7 @@
 {
-  "name": "fetraning",
+  "name": "travel-map",
   "version": "1.0.0",
-  "description": "实战练习，飞速提升（加入星球可获取所有源码，及实现过程说明）.",
+  "description": "旅游足迹图",
   "main": "index.js",
   "scripts": {
     "build": "node_modules/.bin/webpack --config webpack.config.js",
@@ -18,7 +18,7 @@
     "name": "giscafer",
     "url": "http://giscafer.com"
   },
-  "homepage": "https://fedemo.duapp.com",
+  "homepage": "http://map.giscafer.com",
   "license": "Apache-2.0",
   "devDependencies": {
     "copy-webpack-plugin": "^4.0.1",
@@ -31,6 +31,5 @@
     "webpack": "^3.5.6",
     "webpack-dev-server": "^2.9.1"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

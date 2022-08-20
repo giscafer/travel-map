@@ -1,5 +1,5 @@
 {
-  "fields": ["country", "city", "times", "X_COORD", "Y_COORD"],
+  "fields": ["country", "city", "times", "longitude", "latitude"],
   "rows": [
     {
       "country": "中国",
@@ -8,8 +8,8 @@
       "date": "",
       "imgs": ["beihai_1.jpg"],
       "remark": "Home",
-      "X_COORD": "109.132287",
-      "Y_COORD": "21.450901"
+      "longitude": "109.132287",
+      "latitude": "21.450901"
     },
     {
       "country": "中国",
@@ -17,8 +17,8 @@
       "times": "1",
       "date": "",
       "remark": "~",
-      "X_COORD": "108.36517",
-      "Y_COORD": "22.81985"
+      "longitude": "108.36517",
+      "latitude": "22.81985"
     },
     {
       "country": "中国",
@@ -27,8 +27,8 @@
       "date": "2010~2014",
       "imgs": ["xinong_1.jpg"],
       "remark": "大学4年，人生第一次离开家那么远，第一次坐长途火车36个小时，感受到了南北文化风俗差异，遇到来自五湖四海的同学们，一起学习成长。",
-      "X_COORD": "108.077977",
-      "Y_COORD": "34.269512"
+      "longitude": "108.077977",
+      "latitude": "34.269512"
     },
     {
       "country": "中国",
@@ -37,8 +37,8 @@
       "date": "2010~2014",
       "imgs": ["xian_0.jpg"],
       "remark": "读书四年，常往西安，一座有中国古代文化的城市",
-      "X_COORD": "108.941433",
-      "Y_COORD": "34.343424"
+      "longitude": "108.941433",
+      "latitude": "34.343424"
     },
     {
       "country": "中国",
@@ -53,8 +53,8 @@
         "xianyang_4.jpg"
       ],
       "remark": "清明节游乾陵，武则天无字碑，唐高宗墓，有唐永泰公主墓，乾陵地宫……",
-      "X_COORD": "108.217844",
-      "Y_COORD": "34.578448"
+      "longitude": "108.217844",
+      "latitude": "34.578448"
     },
     {
       "country": "中国",
@@ -76,8 +76,8 @@
         "yanan_10.jpg",
         "yanan_11.jpg"
       ],
-      "X_COORD": "109.493847",
-      "Y_COORD": "36.654068"
+      "longitude": "109.493847",
+      "latitude": "36.654068"
     },
     {
       "country": "中国",
@@ -106,8 +106,8 @@
         "taibaishan_19.jpg"
       ],
       "remark": "太白山2日游，海拔3771米，国家重点风景名胜区，国家级自然保护区",
-      "X_COORD": "107.80",
-      "Y_COORD": "34.103965"
+      "longitude": "107.80",
+      "latitude": "34.103965"
     },
     {
       "country": "中国",
@@ -121,8 +121,8 @@
         "chungking_4.jpg"
       ],
       "remark": "重庆2日游、火锅、解放碑、洋人街，很有特色的轻轨",
-      "X_COORD": "106.583918",
-      "Y_COORD": "29.560395"
+      "longitude": "106.583918",
+      "latitude": "29.560395"
     },
     {
       "country": "中国",
@@ -130,8 +130,8 @@
       "times": "2",
       "date": "2014~2016",
       "remark": "北京工作，第一份工作，北漂两年",
-      "X_COORD": "116.399286",
-      "Y_COORD": "39.907454"
+      "longitude": "116.399286",
+      "latitude": "39.907454"
     },
     {
       "country": "中国",
@@ -139,8 +139,8 @@
       "times": "2",
       "date": "2015年9月",
       "remark": "Forestar，第一次出差，驻场乌市3周左右，住一间2室1厅1厨1卫的房子，一起的人员有龙哥、洋哥、冬康，我们自己做饭，写代码。\n\n 感受到新疆的时差，公斤为单位，去看了大巴扎",
-      "X_COORD": "87.528442",
-      "Y_COORD": "43.842618"
+      "longitude": "87.528442",
+      "latitude": "43.842618"
     },
     {
       "country": "中国",
@@ -149,8 +149,8 @@
       "date": "2016年4月",
       "imgs": ["fuzhou_1.jpg", "fuzhou_2.jpg"],
       "remark": "第二次出差，驻场福州地矿局，生活工作于福州一个多月，小伙伴较多:小宋、小爱、小郭、大郭、女生两位，旭哥、岩哥等。",
-      "X_COORD": "119.295872",
-      "Y_COORD": "26.082421"
+      "longitude": "119.295872",
+      "latitude": "26.082421"
     },
     {
       "country": "中国",
@@ -165,8 +165,8 @@
         "wuyishan_4.jpg"
       ],
       "remark": "Forestar，矿证项目团队集体旅游。武夷山很美，茶很香",
-      "X_COORD": "117.959779",
-      "Y_COORD": "27.660599"
+      "longitude": "117.959779",
+      "latitude": "27.660599"
     },
     {
       "country": "中国",
@@ -175,8 +175,8 @@
       "date": "2016年8月",
       "imgs": ["gz_2.jpg", "gz_3.jpg", "gz_4.jpg"],
       "remark": "第二份工作，结束两年北漂，2016年8月开始在广州的第一份工作（图为广州塔488米观景台）",
-      "X_COORD": "113.272674",
-      "Y_COORD": "23.157259"
+      "longitude": "113.272674",
+      "latitude": "23.157259"
     },
     {
       "country": "中国",
@@ -185,8 +185,8 @@
       "date": "2017年11月",
       "imgs": ["qingyuan_20171112.jpg", "qingyuan_1.jpg", "qingyuan_2.jpg"],
       "remark": "1ziton，公司三周年会，清远徒步+年会，徒步当天台风天气，还是顺利翻越十几个山头，总程>10公里",
-      "X_COORD": "113.055344",
-      "Y_COORD": "23.695911"
+      "longitude": "113.055344",
+      "latitude": "23.695911"
     },
     {
       "country": "中国",
@@ -195,8 +195,8 @@
       "date": "2019年1月",
       "imgs": [],
       "remark": "世界之窗一日游",
-      "X_COORD": "113.9699202775955",
-      "Y_COORD": "22.5370306234353"
+      "longitude": "113.9699202775955",
+      "latitude": "22.5370306234353"
     },
     {
       "country": "中国",
@@ -209,8 +209,8 @@
         "foshan_201903_3.jpg"
       ],
       "remark": "4人（星海、秀彬、锐亮）佛山顺德游，目的为了吃和聊天",
-      "X_COORD": "113.24993",
-      "Y_COORD": "22.83851"
+      "longitude": "113.24993",
+      "latitude": "22.83851"
     },
     {
       "country": "中国",
@@ -219,8 +219,8 @@
       "date": "2019年5月",
       "imgs": ["zhuhai_1.jpg", "zhuhai_2.jpg", "zhuhai_3.jpg"],
       "remark": "从珠海去澳门，又回珠海游玩",
-      "X_COORD": "113.5766800000",
-      "Y_COORD": "22.2707300000"
+      "longitude": "113.5766800000",
+      "latitude": "22.2707300000"
     },
     {
       "country": "中国",
@@ -229,8 +229,8 @@
       "date": "2019年5月",
       "imgs": ["macao_1.jpg", "macao_3.jpg", "macao_2.jpg"],
       "remark": "第一次去澳门，随便逛了一下大三巴和赌场",
-      "X_COORD": "113.5491300000",
-      "Y_COORD": "22.1987500000"
+      "longitude": "113.5491300000",
+      "latitude": "22.1987500000"
     },
     {
       "country": "中国",
@@ -239,8 +239,8 @@
       "date": "2021年6月",
       "imgs": ["./hunan/xingshaxian.jpeg"],
       "remark": "出差长沙，长沙县，瞿记的小龙虾不错",
-      "X_COORD": "113.088728",
-      "Y_COORD": "28.247636"
+      "longitude": "113.088728",
+      "latitude": "28.247636"
     },
     {
       "country": "中国",
@@ -249,8 +249,8 @@
       "date": "2021年7月",
       "imgs": ["./hunan/zhangjiajie.jpeg"],
       "remark": "出差张家界，张家界国家森林公园附近酒店封闭开发18天，风景优美，天气凉快。",
-      "X_COORD": "110.441264",
-      "Y_COORD": "29.321075"
+      "longitude": "110.441264",
+      "latitude": "29.321075"
     },
     {
       "country": "中国",
@@ -264,8 +264,8 @@
         "./hunan/wulingyuan4.jpeg"
       ],
       "remark": "工具组团队下班后首次入景区，项目组有18:00后免费进景区的福利，空气不错，山水优美",
-      "X_COORD": "110.476504",
-      "Y_COORD": "29.348445"
+      "longitude": "110.476504",
+      "latitude": "29.348445"
     },
     {
       "country": "中国",
@@ -274,8 +274,8 @@
       "date": "2021年7月16日",
       "imgs": ["./hunan/qianguqing1.jpeg", "./hunan/qianguqing2.jpeg"],
       "remark": "第一次看千古情表演，故事+特效，身临其境感不错。",
-      "X_COORD": "110.57958",
-      "Y_COORD": "29.354341"
+      "longitude": "110.57958",
+      "latitude": "29.354341"
     },
     {
       "country": "中国",
@@ -290,8 +290,22 @@
         "./hunan/tianmenshan5.jpeg"
       ],
       "remark": "天门山，值得玩2天，最美的空中花园和天界仙境。",
-      "X_COORD": "110.494183",
-      "Y_COORD": "29.054063"
+      "longitude": "110.494183",
+      "latitude": "29.054063"
+    },
+    {
+      "country": "中国",
+      "city": "珠海市",
+      "times": "2",
+      "date": "2022年8月",
+      "imgs": [
+        "./zhuhai_changlong_1.jpeg",
+        "./zhuhai_changlong_2.jpeg",
+        "./zhuhai_shatang.jpeg"
+      ],
+      "remark": "2022年第一次出游，就近珠海市，特别有意思的一次旅游！地点：珠海海洋王国、香炉湾沙滩",
+      "longitude": "113.542249",
+      "latitude": "22.104199"
     }
   ]
 }

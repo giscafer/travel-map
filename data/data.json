@@ -25,7 +25,7 @@
       "city": "西北农林科技大学",
       "times": "2",
       "date": "2010~2014",
-      "imgs": ["xinong_1.jpg"],
+      "imgs": ["./shanxi/xinong_1.jpg"],
       "remark": "大学4年，人生第一次离开家那么远，第一次坐长途火车36个小时，感受到了南北文化风俗差异，遇到来自五湖四海的同学们，一起学习成长。",
       "longitude": "108.077977",
       "latitude": "34.269512"
@@ -35,7 +35,7 @@
       "city": "陕西西安市",
       "times": "2",
       "date": "2010~2014",
-      "imgs": ["xian_0.jpg"],
+      "imgs": ["./shanxi/xian_0.jpg"],
       "remark": "读书四年，常往西安，一座有中国古代文化的城市",
       "longitude": "108.941433",
       "latitude": "34.343424"
@@ -46,11 +46,11 @@
       "times": "2",
       "date": "2011年4月",
       "imgs": [
-        "xianyang_0.jpg",
-        "xianyang_1.jpg",
-        "xianyang_2.jpg",
-        "xianyang_3.jpg",
-        "xianyang_4.jpg"
+        "./shanxi/xianyang_0.jpg",
+        "./shanxi/xianyang_1.jpg",
+        "./shanxi/xianyang_2.jpg",
+        "./shanxi/xianyang_3.jpg",
+        "./shanxi/xianyang_4.jpg"
       ],
       "remark": "清明节游乾陵，武则天无字碑，唐高宗墓，有唐永泰公主墓，乾陵地宫……",
       "longitude": "108.217844",
@@ -63,18 +63,18 @@
       "date": "2012年4月",
       "remark": "3日游、路线：黄帝陵——户口瀑布——延安市，延安革命根据地历史文化感受较深",
       "imgs": [
-        "yanan_1.jpg",
-        "yanan_2.jpg",
-        "yanan_3.jpg",
-        "yanan_0.jpg",
-        "yanan_4.jpg",
-        "yanan_5.jpg",
-        "yanan_6.jpg",
-        "yanan_7.jpg",
-        "yanan_8.jpg",
-        "yanan_9.jpg",
-        "yanan_10.jpg",
-        "yanan_11.jpg"
+        "./shanxi/yanan_1.jpg",
+        "./shanxi/yanan_2.jpg",
+        "./shanxi/yanan_3.jpg",
+        "./shanxi/yanan_0.jpg",
+        "./shanxi/yanan_4.jpg",
+        "./shanxi/yanan_5.jpg",
+        "./shanxi/yanan_6.jpg",
+        "./shanxi/yanan_7.jpg",
+        "./shanxi/yanan_8.jpg",
+        "./shanxi/yanan_9.jpg",
+        "./shanxi/yanan_10.jpg",
+        "./shanxi/yanan_11.jpg"
       ],
       "longitude": "109.493847",
       "latitude": "36.654068"
@@ -85,25 +85,25 @@
       "times": "2",
       "date": "2014年5月",
       "imgs": [
-        "taibaishan_1.jpg",
-        "taibaishan_2.jpg",
-        "taibaishan_3.jpg",
-        "taibaishan_4.jpg",
-        "taibaishan_5.jpg",
-        "taibaishan_6.jpg",
-        "taibaishan_7.jpg",
-        "taibaishan_7_1.jpg",
-        "taibaishan_8.jpg",
-        "taibaishan_9.jpg",
-        "taibaishan_10.jpg",
-        "taibaishan_11.jpg",
-        "taibaishan_12.jpg",
-        "taibaishan_13.jpg",
-        "taibaishan_14.jpg",
-        "taibaishan_15.jpg",
-        "taibaishan_16.jpg",
-        "taibaishan_18.jpg",
-        "taibaishan_19.jpg"
+        "./shanxi/taibaishan_1.jpg",
+        "./shanxi/taibaishan_2.jpg",
+        "./shanxi/taibaishan_3.jpg",
+        "./shanxi/taibaishan_4.jpg",
+        "./shanxi/taibaishan_5.jpg",
+        "./shanxi/taibaishan_6.jpg",
+        "./shanxi/taibaishan_7.jpg",
+        "./shanxi/taibaishan_7_1.jpg",
+        "./shanxi/taibaishan_8.jpg",
+        "./shanxi/taibaishan_9.jpg",
+        "./shanxi/taibaishan_10.jpg",
+        "./shanxi/taibaishan_11.jpg",
+        "./shanxi/taibaishan_12.jpg",
+        "./shanxi/taibaishan_13.jpg",
+        "./shanxi/taibaishan_14.jpg",
+        "./shanxi/taibaishan_15.jpg",
+        "./shanxi/taibaishan_16.jpg",
+        "./shanxi/taibaishan_18.jpg",
+        "./shanxi/taibaishan_19.jpg"
       ],
       "remark": "太白山2日游，海拔3771米，山上全程徒步，夜里在山顶小客栈住了一晚，次日一早继续出发，第二天下午返程。",
       "longitude": "107.80",
@@ -147,7 +147,7 @@
       "city": "福建省福州市",
       "times": "2",
       "date": "2016年4月",
-      "imgs": ["fuzhou_1.jpg", "fuzhou_2.jpg"],
+      "imgs": ["./fujian/fuzhou_1.jpg", "./fujian/fuzhou_2.jpg"],
       "remark": "Forestar第二次出差，驻场福州地矿局，工作&生活在福州一个多月，一起的小伙伴有：小宋、小爱、小郭、大郭、女生两位，旭哥、岩哥等。",
       "longitude": "119.295872",
       "latitude": "26.082421"
@@ -158,11 +158,11 @@
       "times": "2",
       "date": "2016年5月",
       "imgs": [
-        "wuyishan_0.jpg",
-        "wuyishan_1.jpg",
-        "wuyishan_2.jpg",
-        "wuyishan_3.jpg",
-        "wuyishan_4.jpg"
+        "./fujian/wuyishan_0.jpg",
+        "./fujian/wuyishan_1.jpg",
+        "./fujian/wuyishan_2.jpg",
+        "./fujian/wuyishan_3.jpg",
+        "./fujian/wuyishan_4.jpg"
       ],
       "remark": "Forestar，矿证项目团队集体旅游。武夷山很美，茶很香",
       "longitude": "117.959779",
@@ -173,7 +173,11 @@
       "city": "广东省广州市",
       "times": "2",
       "date": "2016年8月",
-      "imgs": ["gz_2.jpg", "gz_3.jpg", "gz_4.jpg"],
+      "imgs": [
+        "./guangdong/gz_2.jpg",
+        "./guangdong/gz_3.jpg",
+        "./guangdong/gz_4.jpg"
+      ],
       "remark": "第二份工作，结束两年北漂，2016年8月开始在广州的第一份工作（图为广州塔488米观景台）",
       "longitude": "113.272674",
       "latitude": "23.157259"
@@ -183,7 +187,11 @@
       "city": "广东省清远市",
       "times": "2",
       "date": "2017年11月",
-      "imgs": ["qingyuan_20171112.jpg", "qingyuan_1.jpg", "qingyuan_2.jpg"],
+      "imgs": [
+        "./guangdong/qingyuan_20171112.jpg",
+        "./guangdong/qingyuan_1.jpg",
+        "./guangdong/qingyuan_2.jpg"
+      ],
       "remark": "1ziton，公司三周年会，清远徒步+年会，徒步当天台风天气，还是顺利翻越十几个山头，总程>10公里",
       "longitude": "113.055344",
       "latitude": "23.695911"
@@ -204,9 +212,9 @@
       "times": "2",
       "date": "2019年3月",
       "imgs": [
-        "foshan_201903_1.jpg",
-        "foshan_201903_2.jpg",
-        "foshan_201903_3.jpg"
+        "./guangdong/foshan_201903_1.jpg",
+        "./guangdong/foshan_201903_2.jpg",
+        "./guangdong/foshan_201903_3.jpg"
       ],
       "remark": "4人（星海、秀彬、锐亮）佛山顺德游，目的为了吃和聊天",
       "longitude": "113.24993",
@@ -217,7 +225,11 @@
       "city": "广东省珠海市",
       "times": "2",
       "date": "2019年5月",
-      "imgs": ["zhuhai_1.jpg", "zhuhai_2.jpg", "zhuhai_3.jpg"],
+      "imgs": [
+        "./guangdong/zhuhai_1.jpg",
+        "./guangdong/zhuhai_2.jpg",
+        "./guangdong/zhuhai_3.jpg"
+      ],
       "remark": "从珠海去澳门，又回珠海游玩",
       "longitude": "113.5766800000",
       "latitude": "22.2707300000"
@@ -299,9 +311,9 @@
       "times": "2",
       "date": "2022年8月",
       "imgs": [
-        "./zhuhai_changlong_1.jpeg",
-        "./zhuhai_changlong_2.jpeg",
-        "./zhuhai_shatang.jpeg"
+        "./guangdong/zhuhai_changlong_1.jpeg",
+        "./guangdong/zhuhai_changlong_2.jpeg",
+        "./guangdong/zhuhai_shatang.jpeg"
       ],
       "remark": "2022年第一次出游，就近珠海市，特别有意思的一次旅游！地点：珠海海洋王国、香炉湾沙滩",
       "longitude": "113.542249",

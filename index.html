@@ -1,20 +1,151 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>Travel Map | by giscafer</title>
-		<meta name="description" content="Travel Map是一个记录旅行城市的地图，可以在线查看旅行日记和风景照片">
-	    <link rel="stylesheet" type="text/css" href="lib/leaflet-0.7.3/leaflet.css" />
-		<link rel="stylesheet" type="text/css" href="lib/viewerjs/viewer.min.css" />
-		
-	</head>
-	<body class="fontfix no-select">
-		<div id="mapcontainer">
-			<div id="map"></div>
-			<div id="legend"></div>
-		</div>
-		<script src="lib/leaflet-0.7.3/leaflet.js"></script>
-		<script src="lib/viewerjs/viewer.min.js"></script>
-	</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>Travel Map | by giscafer</title>
+    <meta
+      name="description"
+      content="Travel Map是一个记录旅行城市的地图，可以在线查看旅行日记和风景照片"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="lib/leaflet-0.7.3/leaflet.css"
+    />
+    <link rel="stylesheet" type="text/css" href="lib/viewerjs/viewer.min.css" />
+    <style type="text/css">
+      .accordion {
+        width: 360px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 888;
+        background: #eee;
+      }
+      .accordion .accordion-btn {
+        background-color: #eee;
+        color: #333;
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        font-size: 16px;
+      }
+
+      .accordion .accordion-panel {
+        display: none;
+        padding: 24px;
+      }
+
+      .accordion.active .accordion-panel {
+        display: block;
+      }
+
+      /* 定义列表项的样式 */
+      .list-item {
+        padding: 5px;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+      }
+      /* 定义展开内容的样式 */
+      .expand-content {
+        display: none;
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-left: 20px;
+      }
+      /* 定义悬浮提示框的样式 */
+      .tooltip {
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 5px;
+        display: none;
+        z-index: 999;
+      }
+    </style>
+  </head>
+  <body class="fontfix no-select">
+    <div id="mapcontainer">
+      <!-- 列表容器 -->
+      <div class="accordion">
+        <button class="accordion-btn">展开/收起</button>
+        <div class="accordion-panel">
+          <!-- 这里放要展开/收起的内容 -->
+        </div>
+      </div>
+
+      <!-- 地图容器 -->
+      <div id="map"></div>
+      <div id="legend"></div>
+
+      <!-- 定义模板 -->
+      <script type="text/template" id="list-template">
+        {{#data}}
+        <div class="list-item">
+        	<span class="city">{{city}}</span>
+        	<span class="date">{{date}}</span>
+        	<div class="tooltip">{{remark}}</div>
+        	<div class="expand-content">{{remark}}</div>
+        </div>
+        {{/data}}
+      </script>
+    </div>
+    <script src="lib/leaflet-0.7.3/leaflet.js"></script>
+    <script src="lib/viewerjs/viewer.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--  mustache 模板引擎库 -->
+    <script src="https://unpkg.com/mustache@4.2.0/mustache.js"></script>
+    <script>
+      function genDataListHtml(data) {
+        // 将数据填充到模板中
+        var template = $('#list-template').html();
+        var html = Mustache.render(template, { data: data });
+        $('.accordion-panel').html(html);
+
+        // 绑定点击事件
+        $('.list-item').click(function () {
+          $(this).toggleClass('active');
+          $(this).find('.expand-content').slideToggle();
+        });
+
+        // 绑定悬浮事件
+        $('.list-item').hover(
+          function () {
+            var tooltip = $(this).find('.tooltip');
+            tooltip
+              .css({
+                top: $(this).offset().top - tooltip.outerHeight() - 5,
+                left:
+                  $(this).offset().left +
+                  $(this).outerWidth() / 2 -
+                  tooltip.outerWidth() / 2,
+              })
+              .show();
+          },
+          function () {
+            $(this).find('.tooltip').hide();
+          },
+        );
+      }
+      $(function () {
+        // 获取data数据后再执行模板渲染
+        $.get(
+          'data/data.json?v=' + new Date().getTime(),
+          function (data, status) {
+            genDataListHtml(data.rows);
+          },
+        );
+        $('.accordion-btn').click(function () {
+          $(this).parent().toggleClass('active');
+        });
+      });
+    </script>
+  </body>
 </html>

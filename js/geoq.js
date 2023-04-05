@@ -54,7 +54,6 @@ var geoq = {
       function (o) {
         o = JSON.parse(o);
         _cityData = o.rows;
-        // console.log(_cityData)
         var r = e._parse(o);
         e._points(r), e._flow(r);
       },

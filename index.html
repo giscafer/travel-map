@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="lib/viewerjs/viewer.min.css" />
     <style type="text/css">
       .accordion {
-        width: 360px;
+        width: 60px;
         position: absolute;
         top: 0;
         right: 0;
@@ -36,9 +36,11 @@
         text-align: left;
         border: none;
         outline: none;
-        font-size: 16px;
+        font-size: 14px;
       }
-
+      .accordion.active {
+        width: 360px;
+      }
       .accordion .accordion-panel {
         display: none;
         padding: 10px 24px 32px 24px;
@@ -78,7 +80,7 @@
     <div id="mapcontainer">
       <!-- 列表容器 -->
       <div class="accordion">
-        <button class="accordion-btn">展开/收起</button>
+        <button class="accordion-btn">展开&or;</button>
         <div class="accordion-panel">
           <!-- 这里放要展开/收起的内容 -->
         </div>
@@ -91,7 +93,7 @@
       <!-- 定义模板 -->
       <script type="text/template" id="list-template">
         {{#data}}
-        <div class="list-item">
+        <div class="list-item" data-longitude={{longitude}} data-latitude={{latitude}}>
         	<span class="city">{{city}}</span>
         	<span class="date">{{date}}</span>
         	<div class="tooltip">{{remark}}</div>
@@ -102,7 +104,7 @@
     </div>
     <script src="lib/leaflet-0.7.3/leaflet.js"></script>
     <script src="lib/viewerjs/viewer.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.unpkg.com/jquery@3.6.4/dist/jquery.js"></script>
     <!--  mustache 模板引擎库 -->
     <script src="https://unpkg.com/mustache@4.2.0/mustache.js"></script>
     <script>
@@ -116,6 +118,13 @@
         $('.list-item').click(function () {
           $(this).toggleClass('active');
           $(this).find('.expand-content').slideToggle();
+          const el = $(this);
+          const longitude = el.attr('data-longitude');
+          const latitude = el.attr('data-latitude');
+          var latlng = L.latLng(latitude - 0, longitude - 0);
+          console.log(latlng);
+          window.travelMap.panTo(latlng);
+          window.travelMap.setZoom(8);
         });
 
         // 绑定悬浮事件
@@ -146,7 +155,13 @@
           },
         );
         $('.accordion-btn').click(function () {
-          $(this).parent().toggleClass('active');
+          const el = $(this).parent();
+          el.toggleClass('active');
+          if (el.hasClass('active')) {
+            $(this).html('收起&and;');
+          } else {
+            $(this).html('展开&or;');
+          }
         });
       });
     </script>

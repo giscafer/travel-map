@@ -25,11 +25,12 @@ var geoq = {
       })
       .addTo(this.map);
     var e = L.control.attribution();
-    e.addAttribution('那些我去过的城市'),
-      e.addAttribution(
-        '<a href="http://giscafer.com" target="_blank">@giscafer</a>',
-      ),
-      e.addTo(this.map);
+    e.addAttribution('那些我去过的城市');
+    e.addAttribution(
+      '<a href="http://giscafer.com" target="_blank">@giscafer</a>',
+    );
+    e.addTo(this.map);
+    window.travelMap = this.map;
   },
   _data: function () {
     var t = this.util,

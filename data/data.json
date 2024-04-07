@@ -323,7 +323,7 @@
       "country": "中国",
       "city": "丽江市",
       "times": "2",
-      "date": "2023年2月10",
+      "date": "2023年2月10日",
       "imgs": [
         "./yunnan/lijiang0.jpeg",
         "./yunnan/lijiang1.jpeg",
@@ -337,11 +337,25 @@
       "country": "中国",
       "city": "中山市",
       "times": "1",
-      "date": "2023年3月25",
+      "date": "2023年3月25日",
       "imgs": ["./guangdong/zhongshan.jpeg"],
       "remark": "中山市博物馆，了解香山历史！",
       "longitude": "113.381421",
       "latitude": "22.526331"
+    },
+    {
+      "country": "中国",
+      "city": "武汉市",
+      "times": "2",
+      "date": "2024年4月",
+      "imgs": [
+        "./wuhan/wuhan_1.jpeg",
+        "./wuhan/wuhan_2.jpeg",
+        "./wuhan/wuhan_3.jpeg"
+      ],
+      "remark": "第一次去武汉，武大、黄鹤楼、长江",
+      "longitude": "114.309043",
+      "latitude": "30.550317"
     }
   ]
 }

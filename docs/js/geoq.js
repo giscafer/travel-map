@@ -25,11 +25,12 @@ var geoq = {
       })
       .addTo(this.map);
     var e = L.control.attribution();
-    e.addAttribution('那些我去过的城市'),
-      e.addAttribution(
-        '<a href="http://giscafer.com" target="_blank">@giscafer</a>',
-      ),
-      e.addTo(this.map);
+    e.addAttribution('那些我去过的城市');
+    e.addAttribution(
+      '<a href="http://giscafer.com" target="_blank">@giscafer</a>',
+    );
+    e.addTo(this.map);
+    window.travelMap = this.map;
   },
   _data: function () {
     var t = this.util,
@@ -54,7 +55,6 @@ var geoq = {
       function (o) {
         o = JSON.parse(o);
         _cityData = o.rows;
-        // console.log(_cityData)
         var r = e._parse(o);
         e._points(r), e._flow(r);
       },

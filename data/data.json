@@ -349,9 +349,9 @@
       "times": "2",
       "date": "2024年4月",
       "imgs": [
-        "./wuhan/wuhan_1.jpeg",
-        "./wuhan/wuhan_2.jpeg",
-        "./wuhan/wuhan_3.jpeg"
+        "wuhan/wuhan_1.jpg",
+        "wuhan/wuhan_2.jpg",
+        "wuhan/wuhan_3.jpg"
       ],
       "remark": "第一次去武汉，武大、黄鹤楼、长江",
       "longitude": "114.309043",

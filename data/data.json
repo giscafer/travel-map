@@ -356,6 +356,20 @@
       "remark": "第一次去武汉，武大、黄鹤楼、长江",
       "longitude": "114.309043",
       "latitude": "30.550317"
+    },
+    {
+      "country": "中国",
+      "city": "香港",
+      "times": "1",
+      "date": "2025-05-17",
+      "imgs": [
+        "hongkong/1.jpg",
+        "hongkong/2.jpg",
+        "hongkong/3.jpg"
+      ],
+      "remark": "香港迪士尼乐园位于大屿山，是世界上第五个迪士尼乐园，第一次去迪士尼，还不错",
+      "longitude": "114.045231",
+      "latitude": "22.312771"
     }
   ]
 }

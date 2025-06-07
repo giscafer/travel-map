@@ -1,1 +1,1675 @@
-!function(t){var e=window.webpackJsonp;window.webpackJsonp=function(i,o,r){for(var s,l,h,c=0,u=[];c<i.length;c++)l=i[c],n[l]&&u.push(n[l][0]),n[l]=0;for(s in o)Object.prototype.hasOwnProperty.call(o,s)&&(t[s]=o[s]);for(e&&e(i,o,r);u.length;)u.shift()();if(r)for(c=0;c<r.length;c++)h=a(a.s=r[c]);return h};var i={},n={1:0};function a(e){if(i[e])return i[e].exports;var n=i[e]={i:e,l:!1,exports:{}};return t[e].call(n.exports,n,n.exports,a),n.l=!0,n.exports}a.m=t,a.c=i,a.d=function(t,e,i){a.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:i})},a.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return a.d(e,"a",e),e},a.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},a.p="",a.oe=function(t){throw console.error(t),t}}([function(t,e,i){var n=i(1);"string"==typeof n&&(n=[[t.i,n,""]]);var a={transform:void 0};i(3)(n,a);n.locals&&(t.exports=n.locals)},function(t,e,i){(t.exports=i(2)(!1)).push([t.i,'#map,body,html{height:100%}#banner,#map{width:100%;background-color:#fff}#legend,#map{position:absolute}#banner,#legend{background-repeat:no-repeat}body,html{width:100%;margin:0;padding:0;overflow:hidden}.fontfix{font-family:Arial,\\\\5FAE\\8F6F\\96C5\\9ED1,Hiragino Sans GB,\\\\65B0\\5B8B\\4F53,sans-serif;-webkit-font-smoothing:antialiased}.no-select{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}#banner{height:0;background-position:0 0}#mapcontainer{position:relative;width:100%;height:100%}.leaflet-container{background:#fff}.pictures{margin:0;margin-top:10px;padding:0;list-style:none;max-width:30rem;display:flex;justify-content:start;white-space:pre-wrap;flex-wrap:wrap;min-width:262px}.pictures:after{display:table;content:" ";clear:both}.pictures>li{margin:0 5px 2px 0;border:1px solid transparent;overflow:hidden}.pictures>li>img{width:100%;cursor:-webkit-zoom-in;cursor:zoom-in}.viewer-download{color:#fff;font-family:FontAwesome;font-size:.75rem;line-height:1.5rem;text-align:center}.viewer-download:before{content:"\\F019"}ul.pictures li img{width:80px;height:80px}.leaflet-popup-content{width:auto!important}',""])},function(t,e){t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var i=function(t,e){var i=t[1]||"",n=t[3];if(!n)return i;if(e&&"function"==typeof btoa){var a=function(t){return"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(t))))+" */"}(n),o=n.sources.map(function(t){return"/*# sourceURL="+n.sourceRoot+t+" */"});return[i].concat(o).concat([a]).join("\n")}return[i].join("\n")}(e,t);return e[2]?"@media "+e[2]+"{"+i+"}":i}).join("")},e.i=function(t,i){"string"==typeof t&&(t=[[null,t,""]]);for(var n={},a=0;a<this.length;a++){var o=this[a][0];"number"==typeof o&&(n[o]=!0)}for(a=0;a<t.length;a++){var r=t[a];"number"==typeof r[0]&&n[r[0]]||(i&&!r[2]?r[2]=i:i&&(r[2]="("+r[2]+") and ("+i+")"),e.push(r))}},e}},function(t,e,i){var n={},a=function(t){var e;return function(){return void 0===e&&(e=t.apply(this,arguments)),e}}(function(){return window&&document&&document.all&&!window.atob}),o=function(t){var e={};return function(t){return void 0===e[t]&&(e[t]=function(t){return document.querySelector(t)}.call(this,t)),e[t]}}(),r=null,s=0,l=[],h=i(4);function c(t,e){for(var i=0;i<t.length;i++){var a=t[i],o=n[a.id];if(o){o.refs++;for(var r=0;r<o.parts.length;r++)o.parts[r](a.parts[r]);for(;r<a.parts.length;r++)o.parts.push(m(a.parts[r],e))}else{var s=[];for(r=0;r<a.parts.length;r++)s.push(m(a.parts[r],e));n[a.id]={id:a.id,refs:1,parts:s}}}}function u(t,e){for(var i=[],n={},a=0;a<t.length;a++){var o=t[a],r=e.base?o[0]+e.base:o[0],s={css:o[1],media:o[2],sourceMap:o[3]};n[r]?n[r].parts.push(s):i.push(n[r]={id:r,parts:[s]})}return i}function f(t,e){var i=o(t.insertInto);if(!i)throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var n=l[l.length-1];if("top"===t.insertAt)n?n.nextSibling?i.insertBefore(e,n.nextSibling):i.appendChild(e):i.insertBefore(e,i.firstChild),l.push(e);else{if("bottom"!==t.insertAt)throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");i.appendChild(e)}}function d(t){if(null===t.parentNode)return!1;t.parentNode.removeChild(t);var e=l.indexOf(t);e>=0&&l.splice(e,1)}function p(t){var e=document.createElement("style");return t.attrs.type="text/css",_(e,t.attrs),f(t,e),e}function _(t,e){Object.keys(e).forEach(function(i){t.setAttribute(i,e[i])})}function m(t,e){var i,n,a,o;if(e.transform&&t.css){if(!(o=e.transform(t.css)))return function(){};t.css=o}if(e.singleton){var l=s++;i=r||(r=p(e)),n=g.bind(null,i,l,!1),a=g.bind(null,i,l,!0)}else t.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(i=function(t){var e=document.createElement("link");return t.attrs.type="text/css",t.attrs.rel="stylesheet",_(e,t.attrs),f(t,e),e}(e),n=function(t,e,i){var n=i.css,a=i.sourceMap,o=void 0===e.convertToAbsoluteUrls&&a;(e.convertToAbsoluteUrls||o)&&(n=h(n));a&&(n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(a))))+" */");var r=new Blob([n],{type:"text/css"}),s=t.href;t.href=URL.createObjectURL(r),s&&URL.revokeObjectURL(s)}.bind(null,i,e),a=function(){d(i),i.href&&URL.revokeObjectURL(i.href)}):(i=p(e),n=function(t,e){var i=e.css,n=e.media;n&&t.setAttribute("media",n);if(t.styleSheet)t.styleSheet.cssText=i;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(i))}}.bind(null,i),a=function(){d(i)});return n(t),function(e){if(e){if(e.css===t.css&&e.media===t.media&&e.sourceMap===t.sourceMap)return;n(t=e)}else a()}}t.exports=function(t,e){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");(e=e||{}).attrs="object"==typeof e.attrs?e.attrs:{},e.singleton||(e.singleton=a()),e.insertInto||(e.insertInto="head"),e.insertAt||(e.insertAt="bottom");var i=u(t,e);return c(i,e),function(t){for(var a=[],o=0;o<i.length;o++){var r=i[o];(s=n[r.id]).refs--,a.push(s)}t&&c(u(t,e),e);for(o=0;o<a.length;o++){var s;if(0===(s=a[o]).refs){for(var l=0;l<s.parts.length;l++)s.parts[l]();delete n[s.id]}}}};var v=function(){var t=[];return function(e,i){return t[e]=i,t.filter(Boolean).join("\n")}}();function g(t,e,i,n){var a=i?"":n.css;if(t.styleSheet)t.styleSheet.cssText=v(e,a);else{var o=document.createTextNode(a),r=t.childNodes;r[e]&&t.removeChild(r[e]),r.length?t.insertBefore(o,r[e]):t.appendChild(o)}}},function(t,e){t.exports=function(t){var e="undefined"!=typeof window&&window.location;if(!e)throw new Error("fixUrls requires window.location");if(!t||"string"!=typeof t)return t;var i=e.protocol+"//"+e.host,n=i+e.pathname.replace(/\/[^\/]*$/,"/");return t.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,function(t,e){var a,o=e.trim().replace(/^"(.*)"$/,function(t,e){return e}).replace(/^'(.*)'$/,function(t,e){return e});return/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(o)?t:(a=0===o.indexOf("//")?o:0===o.indexOf("/")?i+o:n+o.replace(/^\.\//,""),"url("+JSON.stringify(a)+")")})}},function(t,e){L.CanvasLayer=L.Class.extend({includes:[L.Mixin.Events],options:{fill:!0,fillColor:"rgba(51, 153, 255, 0.25)",stroke:!0,color:"rgba(51, 153, 255, 0.5)",weight:1,clickable:!0,zoomAnimation:!0,redrawWhenMove:!1},initialize:function(t){L.setOptions(this,t)},onAdd:function(t){this._map=t,this._initCanvas(),this._initEvents(),t.getPanes().overlayPane.appendChild(this._canvas),this.options.redrawWhenMove&&t.on("move",this.redraw,this),t.on("moveend",this.redraw,this),this._draw()},onRemove:function(t){t.getPanes().overlayPane.removeChild(this._canvas),t.off("moveend",this.redraw,this),this.options.redrawWhenMove&&t.off("move",this.redraw,this),this.options.clickable&&t.off({mousemove:this._mouseMove,click:this._click},this),this.options.zoomAnimation&&L.Browser.any3d&&t.off({zoomanim:this._animateZoom,zoomend:this._endZoom},this)},addTo:function(t){return t.addLayer(this),this},setData:function(t){this._data=t,this.redraw()},redraw:function(){this._draw()},_draw:function(){this._map&&this._canvas&&(this._updateCanvasViewport(),this._update())},_update:function(){},_initCanvas:function(){this._canvas=L.DomUtil.create("canvas"),this._canvas.style.position="absolute",this.options.zoomAnimation&&L.Browser.any3d?(this._canvas.className="leaflet-zoom-animated",this._map.on("zoomanim",this._animateZoom,this),this._map.on("zoomend",this._endZoom,this)):this._canvas.className="leaflet-zoom-hide"},_initEvents:function(){this.options.clickable&&(this._map.on("mousemove",this._mouseMove,this),this._map.on("click",this._click,this))},_mouseMove:function(t){this._map&&!this._zooming&&(this._getFeature(t.layerPoint)?(this._canvas.style.cursor="pointer",this._mouseInside=!0,this.fire("mouseover",t)):this._mouseInside&&(this._canvas.style.cursor="",this._mouseInside=!1,this.fire("mouseout",t)))},_click:function(t){if(!this._map.dragging||!this._map.dragging.moved()){var e=this._getFeature(t.layerPoint);e&&(t.feature=e,this.fire("click",t))}},_updateCanvasViewport:function(){this._zooming||(this._updateViewport(),L.DomUtil.setPosition(this._canvas,this._viewport.min))},_updateViewport:function(){var t=this._map.getSize(),e=L.DomUtil.getPosition(this._map._mapPane).multiplyBy(-1)._round(),i=e.add(t.multiplyBy(1)._round());this._canvas.width=t.x,this._canvas.height=t.y,this._viewport=new L.Bounds(e,i)},_animateZoom:function(t){var e=this._map.getZoomScale(t.zoom),i=this._map._getCenterOffset(t.center)._multiplyBy(-e)._add(this._viewport.min);this._canvas.style[L.DomUtil.TRANSFORM]=L.DomUtil.getTranslateString(i)+" scale("+e+") ",this._zooming=!0},_endZoom:function(){this._zooming=!1},_getFeature:function(t){for(var e,i=this._projs||[],n=0;n<i.length;n++)if((e=i[n])&&this._containsPoint(e,t))return this._data.features[n];return null},_controlPoint:function(t,e){var i=(t.x+e.x)/2,n=(t.y+e.y)/2,a=Math.sqrt(Math.pow(t.x-e.x,2)+Math.pow(t.y-t.y,2))/5;if(t.x===e.x)return t.y>e.y?[i-a,n]:[i+a,n];if(t.y===e.y)return t.x>e.x?{x:i,y:n+a}:{x:i,y:n-a};var o=i+(e.y-t.y)/5;return{x:o,y:n+(i-o)*(t.x-i)/(t.y-n)}},_latLng2Screen:function(t,e){var i=this._map.latLngToLayerPoint(new L.latLng(t,e));return this._map.layerPointToContainerPoint(i)._round()}}),L.CanvasLayer.Flow=L.CanvasLayer.extend({options:{reverse:!1,clickable:!1,asyn:!1},_beziers:[],_controls:[],_flowend:!1,_animid:null,initialize:function(t){L.CanvasLayer.prototype.initialize.call(this,t)},onRemove:function(t){this.clear(),L.CanvasLayer.prototype.onRemove.call(this,t)},setData:function(t){this.stop(),this._data=t,this._updateBeziers(),this.options.asyn?this._animateAsyn():this._animate()},_update:function(){if(this._data){if(this._updateBeziers(),!this._flowend)return void(this.options.asyn?this._animateAsyn():this._animate());var t,e,i=this._map.getSize(),n=this._canvas.getContext("2d"),a=this._data.geo;this.options.reverse?(t=this._data.to,e=this._data.from):(t=this._data.from,e=this._data.to);this.options;var o,r,s,l,h=a[t],c=this._latLng2Screen(h[1],h[0]);n.clearRect(0,0,i.x,i.y);for(var u=0;u<e.length;u++)o=a[e[u]],r=this._latLng2Screen(o[1],o[0]),s=this._controls[u],l=this._beziers[u],n.lineWidth=0,n.strokeStyle="rgba(255, 255, 255, 0)",this._curve(n,c,s,r),n.lineWidth=0,n.strokeStyle=this._color(u,0),this._curve(n,c,s,r),n.fillStyle=this._color(u,0),this._arrow(n,l[l.length-1],l[l.length-2])}},_animate:function(){if(this._data){this._animid&&(L.Util.cancelAnimFrame(this._animid),this._animid=null);var t,e=this._map.getSize(),i=this._canvas.getContext("2d"),n=this._beziers,a=this.options,o=this,r=0,s=function(){if(40>=++r){i.clearRect(0,0,e.x,e.y);for(var l=0;l<n.length;l++)t=n[l].slice(0,r),i.lineWidth=a.weight+4,i.strokeStyle="rgba(255, 255, 255,0)",o._line(i,t),i.lineWidth=a.weight,i.strokeStyle=o._color(l,0),o._line(i,t),r>1&&(i.fillStyle=o._color(l,0),o._arrow(i,t[t.length-1],t[t.length-2]));o._animid=L.Util.requestAnimFrame(s,o)}else L.Util.cancelAnimFrame(o._animid),o._flowend=!0,o._update(),o.fire("flowend",{data:o._data})};this._animid=L.Util.requestAnimFrame(s,this)}},_animateAsyn:function(){if(this._data){this._animid&&(L.Util.cancelAnimFrame(this._animid),this._animid=null);var t,e,i,n,a,o=this._map.getSize(),r=this._canvas.getContext("2d"),s=this._beziers,l=this.options,h=this,c=0,u=0;for(t=0;t<s.length;t++)u+=s[t].length;var f=function(){if(u>=++c){for(r.clearRect(0,0,o.x,o.y),i=0,n=c,t=0;t<s.length&&!((n-=s[t].length)<=0);t++)++i;for(n+=s[i].length,e=0;i>e;e++)a=s[e],r.lineWidth=l.weight+4,r.strokeStyle="rgba(255, 255, 255, 0.15)",h._line(r,a),r.lineWidth=l.weight,r.strokeStyle=h._color(e,.8),h._line(r,a),r.fillStyle=h._color(e,1),h._arrow(r,a[a.length-1],a[a.length-2]);n>1&&(a=s[e].slice(0,n),r.lineWidth=l.weight+4,r.strokeStyle="rgba(255, 255, 255, 0.15)",h._line(r,a),r.lineWidth=l.weight,r.strokeStyle=h._color(e,.8),h._line(r,a),r.fillStyle=h._color(e,1),h._arrow(r,a[a.length-1],a[a.length-2])),h._animid=L.Util.requestAnimFrame(f,h)}else L.Util.cancelAnimFrame(h._animid),h._flowend=!0,h._update(),h.fire("flowend",{data:h._data})};this._animid=L.Util.requestAnimFrame(f,this)}},_curve:function(t,e,i,n){t.beginPath(),t.moveTo(e.x,e.y),t.quadraticCurveTo(i.x,i.y,n.x,n.y),t.stroke(),t.closePath()},_line:function(t,e){if(e&&!(e.length<1)){t.beginPath(),t.moveTo(e[0][0],e[0][1]);for(var i=1;i<e.length;i++)t.lineTo(e[i][0],e[i][1]);t.stroke(),t.closePath()}},_arrow:function(t,e,i){var n=this._angle(e,i),a=this._arrowPoints(e);t.save(),t.beginPath(),t.translate(e[0],e[1]),t.moveTo(0,0),t.rotate(n);for(var o=0;o<a.length;o++)t.lineTo(a[o].x-e[0],a[o].y-e[1]);t.fill(),t.restore()},_angle:function(t,e){return t[0]===e[0]?t[1]>e[1]?Math.PI:0:t[1]===e[1]?t[0]<e[0]?-Math.PI/2:Math.PI/2:t[0]<e[0]?t[1]<e[1]?-Math.atan((e[0]-t[0])/(e[1]-t[1])):-Math.PI/2-Math.atan((e[1]-t[1])/(t[0]-e[0])):t[1]<e[1]?Math.atan((t[0]-e[0])/(e[1]-t[1])):Math.PI/2+Math.atan((t[1]-e[1])/(t[0]-e[0]))},_arrowPoints:function(t){var e={},i={},n={},a=Math.sqrt(3);return i.x=t[0],i.y=t[1]+8,e.x=Math.round(t[0]-8*a/2),n.x=Math.round(t[0]+8*a/2),e.y=n.y=t[1]+12,[e,i,n]},_updateBeziers:function(){this._beziers=[],this._controls=[];var t,e,i=this._data.geo;this.options.reverse?(t=this._data.to,e=this._data.from):(t=this._data.from,e=this._data.to);for(var n,a,o,r,s=i[t],l=this._latLng2Screen(s[1],s[0]),h=0;h<e.length;h++)n=i[e[h]],a=this._latLng2Screen(n[1],n[0]),this.options.reverse?(o=this._controlPoint(a,l),r=this._bezier(a,o,l)):(o=this._controlPoint(l,a),r=this._bezier(l,o,a)),this._beziers.push(r),this._controls.push(o)},_bezier:function(t,e,i){for(var n,a,o,r=[],s=0;1>=s;s+=.025)n=Math.pow(1-s,2)*t.x+2*s*(1-s)*e.x+Math.pow(s,2)*i.x,a=Math.pow(1-s,2)*t.y+2*s*(1-s)*e.y+Math.pow(s,2)*i.y,r.length>0&&((o=r[r.length-1])[0]===n&&o[1]===a)||r.push([n,a]);return((o=r[r.length-1])[0]!==i.x||o[1]!==i.y)&&r.push([i.x,i.y]),r},_color:function(t,e){var i=this._data.colors;return"rgba("+i[t%i.length].concat(e).join(",")+")"},stop:function(){this._animid&&(L.Util.cancelAnimFrame(this._animid),this._animid=null);var t=this._map.getSize();this._canvas.getContext("2d").clearRect(0,0,t.x,t.y),this._flowend=!1},clear:function(){this.stop(),this._data=null}}),L.CanvasLayer.flow=function(t){return new L.CanvasLayer.Flow(t)},L.CanvasLayer.MovingCircle=L.CanvasLayer.extend({options:{reverse:!1,clickable:!1,redrawWhenMove:!0},_beziers:[],_controls:[],_indexes:[],_animid:null,initialize:function(t){L.CanvasLayer.prototype.initialize.call(this,t)},onRemove:function(t){this.clear(),L.CanvasLayer.prototype.onRemove.call(this,t)},setData:function(t){this._data=t,this._update()},_update:function(){this._data&&(this._updateBeziers(),this._move())},_move:function(){this.stop(),this._reset();var t,e,i,n,a=this._map.getSize(),o=this._canvas.getContext("2d"),r=this._beziers,s=this;t=this.options.reverse?this._data.from:this._data.to;var l=function(){o.clearRect(0,0,a.x,a.y);for(var h=0;h<t.length;h++)s._indexes[h]===r[h].length&&(s._indexes[h]=1),e=r[h].slice(0,s._indexes[h]),o.lineWidth=0,o.strokeStyle=s._color(h,.15),s._line(o,e),i=r[h][s._indexes[h]],n=r[h][s._indexes[h]-1],s._flare(o,i,n,h),++s._indexes[h];s._animid=L.Util.requestAnimFrame(l,s)};this._animid=L.Util.requestAnimFrame(l,this)},_line:function(t,e){if(e&&!(e.length<1)){t.beginPath(),t.moveTo(e[0][0],e[0][1]);for(var i=1;i<e.length;i++)t.lineTo(e[i][0],e[i][1]);t.stroke(),t.closePath()}},_flare:function(t,e,i,n){var a=this._angle(e,i),o=this._flarePoints(e);t.save(),t.beginPath(),t.translate(e[0],e[1]),t.moveTo(0,0),t.rotate(a),t.moveTo(o[0].x-e[0],o[0].y-e[1]),t.lineTo(o[1].x-e[0],o[1].y-e[1]),t.lineTo(o[2].x-e[0],o[2].y-e[1]),t.fillStyle="rgba(0, 255, 255, 0.5)",t.fill(),t.beginPath(),t.arc(0,0,2,0,Math.PI,!0),t.fill(),t.restore()},_flarePoints:function(t){var e={},i={},n={},a={};return e.x=t[0]-2,n.x=t[0]+2,i.x=a.x=t[0],e.y=n.y=t[1],i.y=t[1]+20,a.y=t[1]-4,[e,i,n,a]},_angle:function(t,e){return t[0]===e[0]?t[1]>e[1]?Math.PI:0:t[1]===e[1]?t[0]<e[0]?-Math.PI/2:Math.PI/2:t[0]<e[0]?t[1]<e[1]?-Math.atan((e[0]-t[0])/(e[1]-t[1])):-Math.PI/2-Math.atan((e[1]-t[1])/(t[0]-e[0])):t[1]<e[1]?Math.atan((t[0]-e[0])/(e[1]-t[1])):Math.PI/2+Math.atan((t[1]-e[1])/(t[0]-e[0]))},_updateBeziers:function(){this._beziers=[],this._controls=[];var t,e,i=this._data.geo;this.options.reverse?(t=this._data.to,e=this._data.from):(t=this._data.from,e=this._data.to);for(var n,a,o,r,s=i[t],l=this._latLng2Screen(s[1],s[0]),h=0;h<e.length;h++)n=i[e[h]],a=this._latLng2Screen(n[1],n[0]),this.options.reverse?(o=this._controlPoint(a,l),r=this._bezier(a,o,l)):(o=this._controlPoint(l,a),r=this._bezier(l,o,a)),this._beziers.push(r),this._controls.push(o)},_bezier:function(t,e,i){for(var n,a,o,r=[],s=.75/Math.sqrt(Math.pow(t.x-i.x,2)+Math.pow(t.y-i.y,2)),l=0;1>=l;l+=s)n=Math.pow(1-l,2)*t.x+2*l*(1-l)*e.x+Math.pow(l,2)*i.x,a=Math.pow(1-l,2)*t.y+2*l*(1-l)*e.y+Math.pow(l,2)*i.y,r.length>0&&((o=r[r.length-1])[0]===n&&o[1]===a)||r.push([n,a]);return((o=r[r.length-1])[0]!==i.x||o[1]!==i.y)&&r.push([i.x,i.y]),r},_gradient:function(t,e,i,n,a){var o=t.createRadialGradient(e[0],e[1],0,e[0],e[1],i);return o.addColorStop(0,"rgba(255, 255, 255, 0.9)"),o.addColorStop(.75,"rgba(255, 255, 255, 0.75)"),o.addColorStop(1,this._color(n,a)),o},_color:function(t,e){var i=this._data.colors;return"rgba("+i[t%i.length].concat(e).join(",")+")"},_reset:function(){var t;t=this.options.reverse?this._data.from:this._data.to;for(var e=0;e<t.length;e++)this._indexes[e]=1},stop:function(){this._animid&&(L.Util.cancelAnimFrame(this._animid),this._animid=null);var t=this._map.getSize();this._canvas.getContext("2d").clearRect(0,0,t.x,t.y)},clear:function(){this.stop(),this._data=null}}),L.CanvasLayer.movingCircle=function(t){return new L.CanvasLayer.MovingCircle(t)},L.CanvasLayer.AnimateCircle=L.CanvasLayer.extend({options:{reverse:!1,clickable:!1,redrawWhenMove:!0},_rs:[],_first:[],_animid:null,initialize:function(t){L.CanvasLayer.prototype.initialize.call(this,t)},onRemove:function(t){this.clear(),L.CanvasLayer.prototype.onRemove.call(this,t)},_update:function(){this._data&&this._animate()},_animate:function(){this.stop(),this._reset();var t,e,i,n,a,o,r,s=this._map.getSize(),l=this._canvas.getContext("2d"),h=this._data.geo,c=this,u=5,f=!1;this.options.reverse?(t=this._data.to,e=this._data.from):(t=this._data.from,e=this._data.to);var d=function(){i=h[t],n=c._latLng2Screen(i[1],i[0]),f?5>=u?f=!1:u-=.1:10>u?u+=.1:f=!0,(r=l.createRadialGradient(n.x,n.y,0,n.x,n.y,u)).addColorStop(0,"rgba(255, 51, 51, 1)"),r.addColorStop(.85,"rgba(255, 51, 51, 0.75)"),r.addColorStop(1,"rgba(255, 255, 255, 0.25)"),l.clearRect(0,0,s.x,s.y),l.fillStyle=r,l.beginPath(),l.arc(n.x,n.y,u,0,2*Math.PI),l.fill();for(var p=0;p<e.length;p++)i=h[e[p]],n=c._latLng2Screen(i[1],i[0]),o=c._radius(e[p]),c._rs[p]<o?c._rs[p]+=.2:(c._rs[p]=0,c._first[p]=!1),15>(a=c._rs[p])&&!c._first[p]&&(r=c._gradient(l,n,o-.2*a,p,.25-.01*a,.8-.05*a),c._circle(l,r,n,o-.2*a)),r=c._gradient(l,n,a,p,.25,.8),c._circle(l,r,n,a);c._animid=L.Util.requestAnimFrame(d,c)};this._animid=L.Util.requestAnimFrame(d,this)},_circle:function(t,e,i,n){t.fillStyle=e,t.beginPath(),t.arc(i.x,i.y,n,0,2*Math.PI),t.fill()},_gradient:function(t,e,i,n,a,o){var r=t.createRadialGradient(e.x,e.y,0,e.x,e.y,i);return r.addColorStop(0,"rgba(0, 0, 0, 0)"),r.addColorStop(.25,"rgba(0, 0, 0, 0)"),r.addColorStop(.85,this._color(n,a)),r.addColorStop(1,this._color(n,o)),r},_color:function(t,e){var i=this._data.colors;return"rgba("+i[t%i.length].concat(e).join(",")+")"},_radius:function(t){var e=this._data.count;return 10+Math.round(30*(e[t]-e.min)/(e.max-e.min))},_reset:function(){var t;t=this.options.reverse?this._data.from:this._data.to;for(var e=0;e<t.length;e++)this._rs[e]=0,this._first[e]=!0},stop:function(){this._animid&&(L.Util.cancelAnimFrame(this._animid),this._animid=null);var t=this._map.getSize();this._canvas.getContext("2d").clearRect(0,0,t.x,t.y)},clear:function(){this.stop(),this._data=null}}),L.CanvasLayer.animateCircle=function(t){return new L.CanvasLayer.AnimateCircle(t)},L.TileLayer.EsriTileLayer=L.TileLayer.extend({initialize:function(t,e){t+="/tile/{z}/{y}/{x}",L.TileLayer.prototype.initialize.call(this,t,e)}}),L.tileLayer.esriTileLayer=function(t,e){return new L.TileLayer.EsriTileLayer(t,e)}},function(t,e){var i=[35.63452,109.132287],n=[],a={colors:["#e73336","#dbe900","#00e92f","#00e6ff","#0050ff"].reverse(),init:function(){this._map(),this._data2()},_map:function(){this.map=L.map("map",{center:i,zoom:5,minZoom:1,maxZoom:16,attributionControl:!1});L.tileLayer.esriTileLayer("http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer",{opacity:1,zIndex:0}).addTo(this.map);var t=L.control.attribution();t.addAttribution("那些我去过的城市"),t.addAttribution('<a href="http://giscafer.com" target="_blank">@giscafer</a>'),t.addTo(this.map),window.travelMap=this.map},_data:function(){var t=this.util,e=this;t.getText("data/data.txt",function(i){var n=t.csv(i),a=e._parse(n);e._points(a),e._flow(a)},function(t){alert("数据下载失败!")})},_data2:function(){var t=this;this.util.getText("data/data.json?v="+(new Date).getTime(),function(e){e=JSON.parse(e),n=e.rows;var i=t._parse(e);t._points(i),t._flow(i)},function(t){alert("数据下载失败!")})},_parse:function(t){for(var e,n,a,o,r,s=t.rows,l={from:"中国",to:[],geo:{},count:{},colors:[],countries:[]},h=-1/0,c=1/0,u=s.length,f=0;u>f;f++)n=(e=s[f]).city,r=+e.times,a=+e.longitude,o=+e.latitude,50>f&&(c>r&&(c=r),r>h&&(h=r),l.to.push(n),l.count[n]=r),l.geo[n]=[a,o],l.countries.push(n);return l.geo[l.from]=i,l.colors=this.util.gradient(this.colors,50),l.count.min=c,l.count.max=h,l},_points:function(t){for(var e,i,n=t.countries,a=0,o=n.length;o>a;a++){e=t.geo[n[a]];var r=getCityData(n[a]),s=r.imgs||[],l=generatePicHtml(r.city,s);i=L.latLng(e[1],e[0]),L.circleMarker(i,{color:"#ffc32c",opacity:0,weight:1,fillColor:"#ffc32c",fillOpacity:1}).setRadius(3).addTo(this.map);var h=L.icon({iconUrl:"./lib/leaflet-0.7.3/images/marker-icon.png",iconAnchor:[20,20]});L.marker(i,{color:"#ffc32c",opacity:0,weight:1,fillColor:"#ffc32c",fillOpacity:1,icon:h}).addTo(this.map).bindPopup("<h3>"+r.city+"</h3>"+r.date+"<br>"+r.remark+"<br>"+l)}},_flow:function(t){var e=(new L.CanvasLayer.flow).addTo(this.map),i=((new L.CanvasLayer.movingCircle).addTo(this.map),(new L.CanvasLayer.animateCircle).addTo(this.map));e.on("flowend",function(t){i.setData(t.data)}),e.setData(t)},_visit:function(){this.util.get("proxy.jsp?http://media.geoq.cn/media/geoq.do?handler=map&opt=visit&appid=e3b6b43a-1a5f-4a47-bf72-ec1436ced686&platform=mobile")},iframe:function(){var t=document.createElement("iframe");t.setAttribute("width","0"),t.setAttribute("height","0"),t.setAttribute("src","http://www.geoq.cn/baidumedia.html?appid=e3b6b43a-1a5f-4a47-bf72-ec1436ced686"),t.style.display="none",document.body.appendChild(t)}};a.util={get:function(t,e,i){var n=new XMLHttpRequest,a=this;return n.open("GET",t,!0),n.send(null),n.onload=function(t){var i=t.target.responseText;"function"==typeof e&&e.call(a,JSON.parse(i))},n.onerror=function(t){"function"==typeof i&&i.call(a,t)},n},getText:function(t,e,i,n){var a=new XMLHttpRequest,o=this;return a.open("GET",t,!0),a.send(null),a.onload=function(t){var i=t.target.responseText;e.call(o,i)},a.onerror=function(t){"function"==typeof i&&i.call(o,t)},a.onprogress=function(t){"function"==typeof n&&t.lengthComputable&&n.call(o,t)},a},csv:function(t){if(!t)return null;var e=t.split("\n");if(!e||e.length<2)return null;for(var i=e.shift().split(","),n=[],a=0;a<i.length;a++)i[a]=i[a].trim().replace("\n","").replace("\r","");for(var o=0,r=e.length;r>o;o++)if(""!==e[o].trim()){var s=e[o].split(","),l={};for(a=0;a<i.length;a++){var h=s[a];h?h.indexOf("\r")>-1&&(h=h.replace("\r","")):h="",l[i[a]]=h.trim()}n.push(l)}return{fields:i,rows:n}},gradient:function(t,e){for(var i=[],n=0;n<t.length;n++)i.push(this.hex2rgb(t[n]));if(e<=i.length)return i.slice(0,e);for(var a,o,r,s=i.length,l=[i[0]],h=1;e-1>h;h++)o=h*(s-1)/(e-1)-(a=Math.floor(h*(s-1)/(e-1))),r=this._color(i[a],i[a+1],o),l.unshift(r);return l.unshift(i[s-1]),l},_color:function(t,e,i){return[Math.round(t[0]+(e[0]-t[0])*i),Math.round(t[1]+(e[1]-t[1])*i),Math.round(t[2]+(e[2]-t[2])*i)]},hex2rgb:function(t){var e={0:0,1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9,A:10,B:11,C:12,D:13,E:14,F:15},i=[];return"string"==typeof t&&/^#[0-9A-F]{3,6}$/.test(t.toUpperCase())&&(3===(t=t.slice(1).toUpperCase()).length?i=[16*e[t[0]]+e[t[0]],16*e[t[1]]+e[t[1]],16*e[t[2]]+e[t[2]]]:6===t.length&&(i=[16*e[t[0]]+e[t[1]],16*e[t[2]]+e[t[3]],16*e[t[4]]+e[t[5]]])),i}},L.DomEvent.on(document,"DOMContentLoaded",function(){a.init(),a.iframe()}),window.getCityData=function(t){for(let i=0;i<n.length;i++){var e=n[i];if(e.city===t)return e}},window.viewPic=function(t){getCityData(t);var e=document.getElementById("galley"),i=new Viewer(e,{url:"data-original",hidden:function(){i.destroy()}});i.show()},window.generatePicHtml=function(t,e){for(var i='<div id="galley"><ul class="pictures" onclick="viewPic(\''+t+"')\">",n=0;n<e.length;n++){var a="./data/pictures/"+e[n],o='style="display:inline-block"';n>5&&(o='style="display:none"'),i+="<li "+o+'><img data-original="'+a+'" src="'+a+'" alt="图片预览"></li>'}return i+="</ul></div></div>"}},function(t,e,i){i(0),i(5),i(6)}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	var parentJsonpFunction = window["webpackJsonp"];
+/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules, executeModules) {
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [], result;
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules, executeModules);
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/ 		if(executeModules) {
+/******/ 			for(i=0; i < executeModules.length; i++) {
+/******/ 				result = __webpack_require__(__webpack_require__.s = executeModules[i]);
+/******/ 			}
+/******/ 		}
+/******/ 		return result;
+/******/ 	};
+/******/
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// objects to store loaded and loading chunks
+/******/ 	var installedChunks = {
+/******/ 		1: 0
+/******/ 	};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(1);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(3)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!./node_modules/css-loader/index.js!./index.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "#map,\nbody,\nhtml {\n    height: 100%\n}\n\n#banner,\n#map {\n    width: 100%;\n    background-color: #fff\n}\n\n#legend,\n#map {\n    position: absolute\n}\n\n#banner,\n#legend {\n    background-repeat: no-repeat\n}\n\nbody,\nhtml {\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    overflow: hidden\n}\n\n.fontfix {\n    font-family: Arial, \"\\5FAE\\8F6F\\96C5\\9ED1\", \"Hiragino Sans GB\", \"\\65B0\\5B8B\\4F53\", sans-serif;\n    -webkit-font-smoothing: antialiased\n}\n\n.no-select {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none\n}\n\n#banner {\n    height: 0;\n    background-position: 0 0\n}\n\n#mapcontainer {\n    position: relative;\n    width: 100%;\n    height: 100%\n}\n\n.leaflet-container {\n    background: #fff\n}\n\n.pictures {\n    margin: 0;\n    margin-top: 10px;\n    padding: 0;\n    list-style: none;\n    max-width: 30rem;\n    display: flex;\n    justify-content: start;\n    white-space: pre-wrap;\n    flex-wrap: wrap;\n    min-width: 262px;\n}\n\n.pictures::after {\n    display: table;\n    content: ' ';\n    clear: both;\n}\n\n.pictures>li {\n    margin: 0 5px 2px 0;\n    border: 1px solid transparent;\n    overflow: hidden;\n}\n\n.pictures>li>img {\n    width: 100%;\n    cursor: -webkit-zoom-in;\n    cursor: zoom-in;\n}\n\n.viewer-download {\n    color: #fff;\n    font-family: FontAwesome;\n    font-size: .75rem;\n    line-height: 1.5rem;\n    text-align: center;\n}\n\n.viewer-download::before {\n    content: \"\\F019\";\n}\n\nul.pictures li img {\n    width: 80px;\n    height: 80px;\n}\n\n.leaflet-popup-content {\n    width: auto !important;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(selector) {
+		if (typeof memo[selector] === "undefined") {
+			memo[selector] = fn.call(this, selector);
+		}
+
+		return memo[selector]
+	};
+})(function (target) {
+	return document.querySelector(target)
+});
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(4);
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton) options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+	if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else {
+		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	options.attrs.type = "text/css";
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	options.attrs.type = "text/css";
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = options.transform(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+L.CanvasLayer = L.Class.extend({
+    includes: [L.Mixin.Events],
+    options: {
+        fill: !0,
+        fillColor: "rgba(51, 153, 255, 0.25)",
+        stroke: !0,
+        color: "rgba(51, 153, 255, 0.5)",
+        weight: 1,
+        clickable: !0,
+        zoomAnimation: !0,
+        redrawWhenMove: !1
+    },
+    initialize: function (t) {
+        L.setOptions(this, t)
+    },
+    onAdd: function (t) {
+        this._map = t,
+            this._initCanvas(),
+            this._initEvents(),
+            t.getPanes().overlayPane.appendChild(this._canvas),
+            this.options.redrawWhenMove && t.on("move", this.redraw, this),
+            t.on("moveend", this.redraw, this),
+            this._draw()
+    },
+    onRemove: function (t) {
+        t.getPanes().overlayPane.removeChild(this._canvas),
+            t.off("moveend", this.redraw, this),
+            this.options.redrawWhenMove && t.off("move", this.redraw, this),
+            this.options.clickable && t.off({
+                mousemove: this._mouseMove,
+                click: this._click
+            }, this),
+            this.options.zoomAnimation && L.Browser.any3d && t.off({
+                zoomanim: this._animateZoom,
+                zoomend: this._endZoom
+            }, this)
+    },
+    addTo: function (t) {
+        return t.addLayer(this),
+            this
+    },
+    setData: function (t) {
+        this._data = t,
+            this.redraw()
+    },
+    redraw: function () {
+        this._draw()
+    },
+    _draw: function () {
+        this._map && this._canvas && (this._updateCanvasViewport(),
+            this._update())
+    },
+    _update: function () { },
+    _initCanvas: function () {
+        this._canvas = L.DomUtil.create("canvas"),
+            this._canvas.style.position = "absolute",
+            this.options.zoomAnimation && L.Browser.any3d ? (this._canvas.className = "leaflet-zoom-animated",
+                this._map.on("zoomanim", this._animateZoom, this),
+                this._map.on("zoomend", this._endZoom, this)) : this._canvas.className = "leaflet-zoom-hide"
+    },
+    _initEvents: function () {
+        this.options.clickable && (this._map.on("mousemove", this._mouseMove, this),
+            this._map.on("click", this._click, this))
+    },
+    _mouseMove: function (t) {
+        if (this._map && !this._zooming) {
+            var i = this._getFeature(t.layerPoint);
+            i ? (this._canvas.style.cursor = "pointer",
+                this._mouseInside = !0,
+                this.fire("mouseover", t)) : this._mouseInside && (this._canvas.style.cursor = "",
+                    this._mouseInside = !1,
+                    this.fire("mouseout", t))
+        }
+    },
+    _click: function (t) {
+        if (!this._map.dragging || !this._map.dragging.moved()) {
+            var i = this._getFeature(t.layerPoint);
+            i && (t.feature = i,
+                this.fire("click", t))
+        }
+    },
+    _updateCanvasViewport: function () {
+        this._zooming || (this._updateViewport(),
+            L.DomUtil.setPosition(this._canvas, this._viewport.min))
+    },
+    _updateViewport: function () {
+        var t = this._map.getSize()
+            , i = L.DomUtil.getPosition(this._map._mapPane)
+            , e = i.multiplyBy(-1)._round()
+            , a = e.add(t.multiplyBy(1)._round());
+        this._canvas.width = t.x,
+            this._canvas.height = t.y,
+            this._viewport = new L.Bounds(e, a)
+    },
+    _animateZoom: function (t) {
+        var i = this._map.getZoomScale(t.zoom)
+            , e = this._map._getCenterOffset(t.center)._multiplyBy(-i)._add(this._viewport.min);
+        this._canvas.style[L.DomUtil.TRANSFORM] = L.DomUtil.getTranslateString(e) + " scale(" + i + ") ",
+            this._zooming = !0
+    },
+    _endZoom: function () {
+        this._zooming = !1
+    },
+    _getFeature: function (t) {
+        for (var i, e = this._projs || [], a = 0; a < e.length; a++)
+            if (i = e[a],
+                i && this._containsPoint(i, t))
+                return this._data.features[a];
+        return null
+    },
+    _controlPoint: function (t, i) {
+        var e = (t.x + i.x) / 2
+            , a = (t.y + i.y) / 2
+            , n = Math.sqrt(Math.pow(t.x - i.x, 2) + Math.pow(t.y - t.y, 2))
+            , o = n / 5;
+        if (t.x === i.x)
+            return t.y > i.y ? [e - o, a] : [e + o, a];
+        if (t.y === i.y)
+            return t.x > i.x ? {
+                x: e,
+                y: a + o
+            } : {
+                    x: e,
+                    y: a - o
+                };
+        var s = e + (i.y - t.y) / 5
+            , r = a + (e - s) * (t.x - e) / (t.y - a);
+        return {
+            x: s,
+            y: r
+        }
+    },
+    _latLng2Screen: function (t, i) {
+        var e = this._map.latLngToLayerPoint(new L.latLng(t, i));
+        return this._map.layerPointToContainerPoint(e)._round()
+    }
+}),
+    L.CanvasLayer.Flow = L.CanvasLayer.extend({
+        options: {
+            reverse: !1,
+            clickable: !1,
+            asyn: !1
+        },
+        _beziers: [],
+        _controls: [],
+        _flowend: !1,
+        _animid: null,
+        initialize: function (t) {
+            L.CanvasLayer.prototype.initialize.call(this, t)
+        },
+        onRemove: function (t) {
+            this.clear(),
+                L.CanvasLayer.prototype.onRemove.call(this, t)
+        },
+        setData: function (t) {
+            this.stop(),
+                this._data = t,
+                this._updateBeziers(),
+                this.options.asyn ? this._animateAsyn() : this._animate()
+        },
+        _update: function () {
+            if (this._data) {
+                if (this._updateBeziers(),
+                    !this._flowend)
+                    return void (this.options.asyn ? this._animateAsyn() : this._animate());
+                var t, i, e = this._map.getSize(), a = this._canvas.getContext("2d"), n = this._data.geo;
+                this.options.reverse ? (t = this._data.to,
+                    i = this._data.from) : (t = this._data.from,
+                        i = this._data.to);
+                var o, s, r, h, l = this.options, _ = n[t], c = this._latLng2Screen(_[1], _[0]);
+                a.clearRect(0, 0, e.x, e.y);
+                for (var d = 0; d < i.length; d++)
+                    o = n[i[d]],
+                        s = this._latLng2Screen(o[1], o[0]),
+                        r = this._controls[d],
+                        h = this._beziers[d],
+                        a.lineWidth = 0,
+                        // a.lineWidth = l.weight + 4,
+                        a.strokeStyle = "rgba(255, 255, 255, 0)",//隐藏线
+                        // a.strokeStyle = "rgba(255, 255, 255, 0.15)",
+                        this._curve(a, c, r, s),
+                        a.lineWidth = 0,
+                        a.strokeStyle = this._color(d, 0),//隐藏线
+                        // a.lineWidth = l.weight,
+                        // a.strokeStyle = this._color(d, .8),
+                        this._curve(a, c, r, s),
+                        a.fillStyle = this._color(d, 0),// 隐藏箭头
+                        // a.fillStyle = this._color(d, 1),
+                        this._arrow(a, h[h.length - 1], h[h.length - 2])
+            }
+        },
+        _animate: function () {
+            if (this._data) {
+                this._animid && (L.Util.cancelAnimFrame(this._animid),
+                    this._animid = null);
+                var t, i = this._map.getSize(), e = this._canvas.getContext("2d"), a = this._beziers, n = this.options, o = this, s = 0, r = 40, h = function () {
+                    if (++s,
+                        r >= s) {
+                        e.clearRect(0, 0, i.x, i.y);
+                        for (var l = 0; l < a.length; l++)
+                            t = a[l].slice(0, s),
+                                e.lineWidth = n.weight + 4,
+                                e.strokeStyle = "rgba(255, 255, 255,0)",// 初始化线隐藏
+                                // e.strokeStyle = "rgba(255, 255, 255, 0.15)",
+                                o._line(e, t),
+                                e.lineWidth = n.weight,
+                                e.strokeStyle = o._color(l,0),// 初始化线隐藏
+                                // e.strokeStyle = o._color(l, .8),// 初始化线隐藏
+                                o._line(e, t),
+                                s > 1 && (e.fillStyle = o._color(l, 0),
+                                // s > 1 && (e.fillStyle = o._color(l, 1),
+                                    o._arrow(e, t[t.length - 1], t[t.length - 2]));
+                        o._animid = L.Util.requestAnimFrame(h, o)
+                    } else
+                        L.Util.cancelAnimFrame(o._animid),
+                            o._flowend = !0,
+                            o._update(),
+                            o.fire("flowend", {
+                                data: o._data
+                            })
+                };
+                this._animid = L.Util.requestAnimFrame(h, this)
+            }
+        },
+        _animateAsyn: function () {
+            if (this._data) {
+                this._animid && (L.Util.cancelAnimFrame(this._animid),
+                    this._animid = null);
+                var t, i, e, a, n, o = this._map.getSize(), s = this._canvas.getContext("2d"), r = this._beziers, h = this.options, l = this, _ = 0, c = 0;
+                for (t = 0; t < r.length; t++)
+                    c += r[t].length;
+                var d = function () {
+                    if (++_,
+                        c >= _) {
+                        for (s.clearRect(0, 0, o.x, o.y),
+                            e = 0,
+                            a = _,
+                            t = 0; t < r.length && !((a -= r[t].length) <= 0); t++)
+                            ++e;
+                        for (a += r[e].length,
+                            i = 0; e > i; i++)
+                            n = r[i],
+                                s.lineWidth = h.weight + 4,
+                                s.strokeStyle = "rgba(255, 255, 255, 0.15)",
+                                l._line(s, n),
+                                s.lineWidth = h.weight,
+                                s.strokeStyle = l._color(i, .8),
+                                l._line(s, n),
+                                s.fillStyle = l._color(i, 1),
+                                l._arrow(s, n[n.length - 1], n[n.length - 2]);
+                        a > 1 && (n = r[i].slice(0, a),
+                            s.lineWidth = h.weight + 4,
+                            s.strokeStyle = "rgba(255, 255, 255, 0.15)",
+                            l._line(s, n),
+                            s.lineWidth = h.weight,
+                            s.strokeStyle = l._color(i, .8),
+                            l._line(s, n),
+                            s.fillStyle = l._color(i, 1),
+                            l._arrow(s, n[n.length - 1], n[n.length - 2])),
+                            l._animid = L.Util.requestAnimFrame(d, l)
+                    } else
+                        L.Util.cancelAnimFrame(l._animid),
+                            l._flowend = !0,
+                            l._update(),
+                            l.fire("flowend", {
+                                data: l._data
+                            })
+                };
+                this._animid = L.Util.requestAnimFrame(d, this)
+            }
+        },
+        _curve: function (t, i, e, a) {
+            t.beginPath(),
+                t.moveTo(i.x, i.y),
+                t.quadraticCurveTo(e.x, e.y, a.x, a.y),
+                t.stroke(),
+                t.closePath()
+        },
+        _line: function (t, i) {
+            if (i && !(i.length < 1)) {
+                t.beginPath(),
+                    t.moveTo(i[0][0], i[0][1]);
+                for (var e = 1; e < i.length; e++)
+                    t.lineTo(i[e][0], i[e][1]);
+                t.stroke(),
+                    t.closePath()
+            }
+        },
+        _arrow: function (t, i, e) {
+            var a = this._angle(i, e)
+                , n = this._arrowPoints(i);
+            t.save(),
+                t.beginPath(),
+                t.translate(i[0], i[1]),
+                t.moveTo(0, 0),
+                t.rotate(a);
+            for (var o = 0; o < n.length; o++)
+                t.lineTo(n[o].x - i[0], n[o].y - i[1]);
+            t.fill(),
+                t.restore()
+        },
+        _angle: function (t, i) {
+            return t[0] === i[0] ? t[1] > i[1] ? Math.PI : 0 : t[1] === i[1] ? t[0] < i[0] ? -Math.PI / 2 : Math.PI / 2 : t[0] < i[0] ? t[1] < i[1] ? -Math.atan((i[0] - t[0]) / (i[1] - t[1])) : -Math.PI / 2 - Math.atan((i[1] - t[1]) / (t[0] - i[0])) : t[1] < i[1] ? Math.atan((t[0] - i[0]) / (i[1] - t[1])) : Math.PI / 2 + Math.atan((t[1] - i[1]) / (t[0] - i[0]))
+        },
+        _arrowPoints: function (t) {
+            var i = 8
+                , e = {}
+                , a = {}
+                , n = {}
+                , o = Math.sqrt(3);
+            return a.x = t[0],
+                a.y = t[1] + i,
+                e.x = Math.round(t[0] - i * o / 2),
+                n.x = Math.round(t[0] + i * o / 2),
+                e.y = n.y = t[1] + 3 * i / 2,
+                [e, a, n]
+        },
+        _updateBeziers: function () {
+            this._beziers = [],
+                this._controls = [];
+            var t, i, e = this._data.geo;
+            this.options.reverse ? (t = this._data.to,
+                i = this._data.from) : (t = this._data.from,
+                    i = this._data.to);
+            for (var a, n, o, s, r = e[t], h = this._latLng2Screen(r[1], r[0]), l = 0; l < i.length; l++)
+                a = e[i[l]],
+                    n = this._latLng2Screen(a[1], a[0]),
+                    this.options.reverse ? (o = this._controlPoint(n, h),
+                        s = this._bezier(n, o, h)) : (o = this._controlPoint(h, n),
+                            s = this._bezier(h, o, n)),
+                    this._beziers.push(s),
+                    this._controls.push(o)
+        },
+        _bezier: function (t, i, e) {
+            for (var a, n, o, s = [], r = .025, h = 0; 1 >= h; h += r)
+                a = Math.pow(1 - h, 2) * t.x + 2 * h * (1 - h) * i.x + Math.pow(h, 2) * e.x,
+                    n = Math.pow(1 - h, 2) * t.y + 2 * h * (1 - h) * i.y + Math.pow(h, 2) * e.y,
+                    s.length > 0 && (o = s[s.length - 1],
+                        o[0] === a && o[1] === n) || s.push([a, n]);
+            return o = s[s.length - 1],
+                (o[0] !== e.x || o[1] !== e.y) && s.push([e.x, e.y]),
+                s
+        },
+        _color: function (t, i) {
+            var e = this._data.colors;
+            return "rgba(" + e[t % e.length].concat(i).join(",") + ")"
+        },
+        stop: function () {
+            this._animid && (L.Util.cancelAnimFrame(this._animid),
+                this._animid = null);
+            var t = this._map.getSize();
+            this._canvas.getContext("2d").clearRect(0, 0, t.x, t.y),
+                this._flowend = !1
+        },
+        clear: function () {
+            this.stop(),
+                this._data = null
+        }
+    }),
+    L.CanvasLayer.flow = function (t) {
+        return new L.CanvasLayer.Flow(t)
+    };
+    /**移动的圆形 */
+    L.CanvasLayer.MovingCircle = L.CanvasLayer.extend({
+        options: {
+            reverse: !1,
+            clickable: !1,
+            redrawWhenMove: !0
+        },
+        _beziers: [],
+        _controls: [],
+        _indexes: [],
+        _animid: null,
+        initialize: function (t) {
+            L.CanvasLayer.prototype.initialize.call(this, t)
+        },
+        onRemove: function (t) {
+            this.clear(),
+                L.CanvasLayer.prototype.onRemove.call(this, t)
+        },
+        setData: function (t) {
+            this._data = t,
+                this._update()
+        },
+        _update: function () {
+            this._data && (this._updateBeziers(),
+                this._move())
+        },
+        _move: function () {
+            this.stop(),
+                this._reset();
+            var t, i, e, a, n = this._map.getSize(), o = this._canvas.getContext("2d"), s = this._beziers, r = this;
+            t = this.options.reverse ? this._data.from : this._data.to;
+            var h = function () {
+                o.clearRect(0, 0, n.x, n.y);
+                for (var l = 0; l < t.length; l++)
+                    r._indexes[l] === s[l].length && (r._indexes[l] = 1),
+                        i = s[l].slice(0, r._indexes[l]),
+                        o.lineWidth = 0,
+                        // 隐藏线
+                        // o.lineWidth = 6,
+                        // o.strokeStyle = r._color(l, 0),
+                        o.strokeStyle = r._color(l, .15),
+                        r._line(o, i),
+                        e = s[l][r._indexes[l]],
+                        a = s[l][r._indexes[l] - 1],
+                        r._flare(o, e, a, l),
+                        ++r._indexes[l];
+                r._animid = L.Util.requestAnimFrame(h, r)
+            };
+            this._animid = L.Util.requestAnimFrame(h, this)
+        },
+        _line: function (t, i) {
+            if (i && !(i.length < 1)) {
+                t.beginPath(),
+                    t.moveTo(i[0][0], i[0][1]);
+                for (var e = 1; e < i.length; e++)
+                    t.lineTo(i[e][0], i[e][1]);
+                t.stroke(),
+                    t.closePath()
+            }
+        },
+        _flare: function (t, i, e, a) {
+            var n = this._angle(i, e)
+                , o = this._flarePoints(i);
+            t.save(),
+                // 绘制线
+                t.beginPath(),
+                t.translate(i[0], i[1]),
+                t.moveTo(0, 0),
+                t.rotate(n),
+                t.moveTo(o[0].x - i[0], o[0].y - i[1]),
+                t.lineTo(o[1].x - i[0], o[1].y - i[1]),
+                t.lineTo(o[2].x - i[0], o[2].y - i[1]),
+                t.fillStyle = "rgba(0, 255, 255, 0.5)",
+                t.fill(),
+                // 绘制弧线
+                t.beginPath(),
+                t.arc(0, 0, 2, 0, Math.PI, !0), // 圆形弧度
+                t.fill(),
+                t.restore()
+        },
+        _flarePoints: function (t) {
+            var i = 2
+                , e = 20 // 线长
+                , a = {}
+                , n = {}
+                , o = {}
+                , s = {};
+            return a.x = t[0] - i,
+                o.x = t[0] + i,
+                n.x = s.x = t[0],
+                a.y = o.y = t[1],
+                n.y = t[1] + e,
+                s.y = t[1] - 2 * i,
+                [a, n, o, s]
+        },
+        _angle: function (t, i) {
+            return t[0] === i[0] ? t[1] > i[1] ? Math.PI : 0 : t[1] === i[1] ? t[0] < i[0] ? -Math.PI / 2 : Math.PI / 2 : t[0] < i[0] ? t[1] < i[1] ? -Math.atan((i[0] - t[0]) / (i[1] - t[1])) : -Math.PI / 2 - Math.atan((i[1] - t[1]) / (t[0] - i[0])) : t[1] < i[1] ? Math.atan((t[0] - i[0]) / (i[1] - t[1])) : Math.PI / 2 + Math.atan((t[1] - i[1]) / (t[0] - i[0]))
+        },
+        _updateBeziers: function () {
+            this._beziers = [],
+                this._controls = [];
+            var t, i, e = this._data.geo;
+            this.options.reverse ? (t = this._data.to,
+                i = this._data.from) : (t = this._data.from,
+                    i = this._data.to);
+            for (var a, n, o, s, r = e[t], h = this._latLng2Screen(r[1], r[0]), l = 0; l < i.length; l++)
+                a = e[i[l]],
+                    n = this._latLng2Screen(a[1], a[0]),
+                    this.options.reverse ? (o = this._controlPoint(n, h),
+                        s = this._bezier(n, o, h)) : (o = this._controlPoint(h, n),
+                            s = this._bezier(h, o, n)),
+                    this._beziers.push(s),
+                    this._controls.push(o)
+        },
+        _bezier: function (t, i, e) {
+            for (var a, n, o, s = [], r = .75 / Math.sqrt(Math.pow(t.x - e.x, 2) + Math.pow(t.y - e.y, 2)), h = 0; 1 >= h; h += r)
+                a = Math.pow(1 - h, 2) * t.x + 2 * h * (1 - h) * i.x + Math.pow(h, 2) * e.x,
+                    n = Math.pow(1 - h, 2) * t.y + 2 * h * (1 - h) * i.y + Math.pow(h, 2) * e.y,
+                    s.length > 0 && (o = s[s.length - 1],
+                        o[0] === a && o[1] === n) || s.push([a, n]);
+            return o = s[s.length - 1],
+                (o[0] !== e.x || o[1] !== e.y) && s.push([e.x, e.y]),
+                s
+        },
+        _gradient: function (t, i, e, a, n) {
+            var o = t.createRadialGradient(i[0], i[1], 0, i[0], i[1], e);
+            return o.addColorStop(0, "rgba(255, 255, 255, 0.9)"),
+                o.addColorStop(.75, "rgba(255, 255, 255, 0.75)"),
+                o.addColorStop(1, this._color(a, n)),
+                o
+        },
+        _color: function (t, i) {
+            var e = this._data.colors;
+            return "rgba(" + e[t % e.length].concat(i).join(",") + ")"
+        },
+        _reset: function () {
+            var t;
+            t = this.options.reverse ? this._data.from : this._data.to;
+            for (var i = 0; i < t.length; i++)
+                this._indexes[i] = 1
+        },
+        stop: function () {
+            this._animid && (L.Util.cancelAnimFrame(this._animid),
+                this._animid = null);
+            var t = this._map.getSize();
+            this._canvas.getContext("2d").clearRect(0, 0, t.x, t.y)
+        },
+        clear: function () {
+            this.stop(),
+                this._data = null
+        }
+    }),
+    L.CanvasLayer.movingCircle = function (t) {
+        return new L.CanvasLayer.MovingCircle(t)
+    };
+    /**闪烁圆圈效果 */
+    L.CanvasLayer.AnimateCircle = L.CanvasLayer.extend({
+        options: {
+            reverse: !1,
+            clickable: !1,
+            redrawWhenMove: !0
+        },
+        _rs: [],
+        _first: [],
+        _animid: null,
+        initialize: function (t) {
+            L.CanvasLayer.prototype.initialize.call(this, t)
+        },
+        onRemove: function (t) {
+            this.clear(),
+                L.CanvasLayer.prototype.onRemove.call(this, t)
+        },
+        _update: function () {
+            this._data && this._animate()
+        },
+        _animate: function () {
+            this.stop(),
+                this._reset();
+            var t, i, e, a, n, o, s, r = this._map.getSize(), h = this._canvas.getContext("2d"), l = this._data.geo, _ = this, c = .2, d = 5, m = !1;
+            this.options.reverse ? (t = this._data.to,
+                i = this._data.from) : (t = this._data.from,
+                    i = this._data.to);
+            var u = function () {
+                e = l[t],
+                    a = _._latLng2Screen(e[1], e[0]),
+                    m ? 5 >= d ? m = !1 : d -= .1 : 10 > d ? d += .1 : m = !0,
+                    s = h.createRadialGradient(a.x, a.y, 0, a.x, a.y, d),
+                    s.addColorStop(0, "rgba(255, 51, 51, 1)"),
+                    s.addColorStop(.85, "rgba(255, 51, 51, 0.75)"),
+                    s.addColorStop(1, "rgba(255, 255, 255, 0.25)"),
+                    h.clearRect(0, 0, r.x, r.y),
+                    h.fillStyle = s,
+                    h.beginPath(),
+                    h.arc(a.x, a.y, d, 0, 2 * Math.PI),
+                    h.fill();
+                for (var f = 0; f < i.length; f++)
+                    e = l[i[f]],
+                        a = _._latLng2Screen(e[1], e[0]),
+                        o = _._radius(i[f]),
+                        _._rs[f] < o ? _._rs[f] += c : (_._rs[f] = 0,
+                            _._first[f] = !1),
+                        n = _._rs[f],
+                        15 > n && !_._first[f] && (s = _._gradient(h, a, o - n * c, f, .25 - .01 * n, .8 - .05 * n),
+                            _._circle(h, s, a, o - n * c)),
+                        s = _._gradient(h, a, n, f, .25, .8),
+                        _._circle(h, s, a, n);
+                _._animid = L.Util.requestAnimFrame(u, _)
+            };
+            this._animid = L.Util.requestAnimFrame(u, this)
+        },
+         // 绘制圆形
+        _circle: function (t, i, e, a) {
+            t.fillStyle = i,
+                t.beginPath(),
+                t.arc(e.x, e.y, a, 0, 2 * Math.PI),
+                t.fill()
+        },
+        // 圆形动画渐变
+        _gradient: function (t, i, e, a, n, o) {
+            var s = t.createRadialGradient(i.x, i.y, 0, i.x, i.y, e);
+            return s.addColorStop(0, "rgba(0, 0, 0, 0)"),
+                s.addColorStop(.25, "rgba(0, 0, 0, 0)"),
+                s.addColorStop(.85, this._color(a, n)),
+                s.addColorStop(1, this._color(a, o)),
+                s
+        },
+        _color: function (t, i) {
+            var e = this._data.colors;
+            return "rgba(" + e[t % e.length].concat(i).join(",") + ")"
+        },
+        _radius: function (t) {
+            var i = this._data.count
+                , e = 10
+                , a = 40;
+            return e + Math.round((a - e) * (i[t] - i.min) / (i.max - i.min))
+        },
+        _reset: function () {
+            var t;
+            t = this.options.reverse ? this._data.from : this._data.to;
+            for (var i = 0; i < t.length; i++)
+                this._rs[i] = 0,
+                    this._first[i] = !0
+        },
+        stop: function () {
+            this._animid && (L.Util.cancelAnimFrame(this._animid),
+                this._animid = null);
+            var t = this._map.getSize();
+            this._canvas.getContext("2d").clearRect(0, 0, t.x, t.y)
+        },
+        clear: function () {
+            this.stop(),
+                this._data = null
+        }
+    }),
+    L.CanvasLayer.animateCircle = function (t) {
+        return new L.CanvasLayer.AnimateCircle(t)
+    }
+    ,
+    L.TileLayer.EsriTileLayer = L.TileLayer.extend({
+        initialize: function (t, i) {
+            t += "/tile/{z}/{y}/{x}",
+                L.TileLayer.prototype.initialize.call(this, t, i)
+        }
+    }),
+    L.tileLayer.esriTileLayer = function (t, i) {
+        return new L.TileLayer.EsriTileLayer(t, i)
+    };
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+﻿var centerPoint = [35.63452, 109.132287];
+var _cityData = [];
+var geoq = {
+  colors: ['#e73336', '#dbe900', '#00e92f', '#00e6ff', '#0050ff'].reverse(),
+  init: function () {
+    this._map();
+    this._data2();
+    // this._visit();
+  },
+  _map: function () {
+    this.map = L.map('map', {
+      center: centerPoint,
+      zoom: 5,
+      minZoom: 1,
+      maxZoom: 16,
+      attributionControl: !1,
+    });
+    // .setView([1.05463, 87.85938], 3);
+    var darkUrl = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
+    L.tileLayer(darkUrl, {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        opacity: 1,
+        zIndex: 0,
+      })
+      .addTo(this.map);
+    var e = L.control.attribution();
+    e.addAttribution('那些我去过的城市');
+    e.addAttribution(
+      '<a href="http://giscafer.com" target="_blank">@giscafer</a>',
+    );
+    e.addTo(this.map);
+    window.travelMap = this.map;
+  },
+  _data: function () {
+    var t = this.util,
+      e = this;
+    t.getText(
+      'data/data.txt',
+      function (n) {
+        var o = t.csv(n),
+          r = e._parse(o);
+        e._points(r), e._flow(r);
+      },
+      function (t) {
+        alert('数据下载失败!');
+      },
+    );
+  },
+  _data2: function () {
+    var t = this.util,
+      e = this;
+    t.getText(
+      'data/data.json?v=' + new Date().getTime(),
+      function (o) {
+        o = JSON.parse(o);
+        _cityData = o.rows;
+        var r = e._parse(o);
+        e._points(r), e._flow(r);
+      },
+      function (t) {
+        alert('数据下载失败!');
+      },
+    );
+  },
+  _parse: function (t) {
+    for (
+      var e,
+        n,
+        o,
+        r,
+        i,
+        a = t.rows,
+        s = {
+          from: '中国',
+          to: [],
+          geo: {},
+          count: {},
+          colors: [],
+          countries: [],
+        },
+        l = -(1 / 0),
+        c = 1 / 0,
+        u = a.length,
+        f = 50,
+        p = 0;
+      u > p;
+      p++
+    )
+      (e = a[p]),
+        (n = e['city']),
+        (i = +e['times']),
+        (o = +e.longitude),
+        (r = +e.latitude),
+        f > p &&
+          (c > i && (c = i), i > l && (l = i), s.to.push(n), (s.count[n] = i)),
+        (s.geo[n] = [o, r]),
+        s.countries.push(n);
+    return (
+      (s.geo[s.from] = centerPoint),
+      (s.colors = this.util.gradient(this.colors, f)),
+      (s.count.min = c),
+      (s.count.max = l),
+      s
+    );
+  },
+  _points: function (t) {
+    for (var e, n, o = t.countries, r = 0, i = o.length; i > r; r++) {
+      e = t.geo[o[r]];
+      var city = getCityData(o[r]);
+      var urls = city.imgs || [];
+      var picHtml = generatePicHtml(city['city'], urls);
+      n = L.latLng(e[1], e[0]);
+      L.circleMarker(n, {
+        color: '#ffc32c',
+        opacity: 0,
+        weight: 1,
+        fillColor: '#ffc32c',
+        fillOpacity: 1,
+      })
+        .setRadius(3)
+        .addTo(this.map);
+      var myIcon = L.icon({
+        iconUrl: './lib/leaflet-0.7.3/images/marker-icon.png',
+        iconAnchor: [20, 20],
+      });
+      // 透明marker作为点击事件
+      var marker = L.marker(n, {
+        color: '#ffc32c',
+        opacity: 0,
+        weight: 1,
+        fillColor: '#ffc32c',
+        fillOpacity: 1,
+        icon: myIcon,
+      })
+        .addTo(this.map)
+        // 点击气泡弹窗
+        .bindPopup(
+          '<h3>' +
+            city['city'] +
+            '</h3>' +
+            city['date'] +
+            '<br>' +
+            city['remark'] +
+            '<br>' +
+            picHtml,
+        );
+      /* marker.on('click', function (e) {
+                console.log(e);
+            }) */
+    }
+  },
+  _flow: function (t) {
+    var e = new L.CanvasLayer.flow().addTo(this.map),
+      n = new L.CanvasLayer.movingCircle().addTo(this.map),
+      o = new L.CanvasLayer.animateCircle().addTo(this.map);
+    e.on('flowend', function (t) {
+      // n.setData(t.data);
+      o.setData(t.data);
+    });
+    e.setData(t);
+  },
+  _visit: function () {
+    this.util.get(
+      'proxy.jsp?http://media.geoq.cn/media/geoq.do?handler=map&opt=visit&appid=e3b6b43a-1a5f-4a47-bf72-ec1436ced686&platform=mobile',
+    );
+  },
+  iframe: function () {
+    var t = document.createElement('iframe');
+    t.setAttribute('width', '0'),
+      t.setAttribute('height', '0'),
+      t.setAttribute(
+        'src',
+        'http://www.geoq.cn/baidumedia.html?appid=e3b6b43a-1a5f-4a47-bf72-ec1436ced686',
+      ),
+      (t.style.display = 'none'),
+      document.body.appendChild(t);
+  },
+};
+(geoq.util = {
+  get: function (t, e, n) {
+    var o = new XMLHttpRequest(),
+      r = this;
+    return (
+      o.open('GET', t, !0),
+      o.send(null),
+      (o.onload = function (t) {
+        var n = t.target.responseText;
+        'function' == typeof e && e.call(r, JSON.parse(n));
+      }),
+      (o.onerror = function (t) {
+        'function' == typeof n && n.call(r, t);
+      }),
+      o
+    );
+  },
+  getText: function (t, e, n, o) {
+    var r = new XMLHttpRequest(),
+      i = this;
+    return (
+      r.open('GET', t, !0),
+      r.send(null),
+      (r.onload = function (t) {
+        var n = t.target.responseText;
+        e.call(i, n);
+      }),
+      (r.onerror = function (t) {
+        'function' == typeof n && n.call(i, t);
+      }),
+      (r.onprogress = function (t) {
+        'function' == typeof o && t.lengthComputable && o.call(i, t);
+      }),
+      r
+    );
+  },
+  csv: function (t) {
+    if (!t) return null;
+    var e = t.split('\n');
+    if (!e || e.length < 2) return null;
+    for (var n = e.shift().split(','), o = [], r = 0; r < n.length; r++)
+      n[r] = n[r].trim().replace('\n', '').replace('\r', '');
+    for (var i = 0, a = e.length; a > i; i++)
+      if ('' !== e[i].trim()) {
+        for (var s = e[i].split(','), l = {}, r = 0; r < n.length; r++) {
+          var c = s[r];
+          c ? c.indexOf('\r') > -1 && (c = c.replace('\r', '')) : (c = ''),
+            (l[n[r]] = c.trim());
+        }
+        o.push(l);
+      }
+    return {
+      fields: n,
+      rows: o,
+    };
+  },
+  gradient: function (t, e) {
+    for (var n = [], o = 0; o < t.length; o++) n.push(this.hex2rgb(t[o]));
+    if (e <= n.length) return n.slice(0, e);
+    for (var r, i, a, s = n.length, l = [n[0]], c = 1; e - 1 > c; c++)
+      (r = Math.floor((c * (s - 1)) / (e - 1))),
+        (i = (c * (s - 1)) / (e - 1) - r),
+        (a = this._color(n[r], n[r + 1], i)),
+        l.unshift(a);
+    return l.unshift(n[s - 1]), l;
+  },
+  _color: function (t, e, n) {
+    return [
+      Math.round(t[0] + (e[0] - t[0]) * n),
+      Math.round(t[1] + (e[1] - t[1]) * n),
+      Math.round(t[2] + (e[2] - t[2]) * n),
+    ];
+  },
+  hex2rgb: function (t) {
+    var e = {
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6,
+        7: 7,
+        8: 8,
+        9: 9,
+        A: 10,
+        B: 11,
+        C: 12,
+        D: 13,
+        E: 14,
+        F: 15,
+      },
+      n = /^#[0-9A-F]{3,6}$/,
+      o = [];
+    return (
+      'string' == typeof t &&
+        n.test(t.toUpperCase()) &&
+        ((t = t.slice(1).toUpperCase()),
+        3 === t.length
+          ? (o = [
+              16 * e[t[0]] + e[t[0]],
+              16 * e[t[1]] + e[t[1]],
+              16 * e[t[2]] + e[t[2]],
+            ])
+          : 6 === t.length &&
+            (o = [
+              16 * e[t[0]] + e[t[1]],
+              16 * e[t[2]] + e[t[3]],
+              16 * e[t[4]] + e[t[5]],
+            ])),
+      o
+    );
+  },
+}),
+  L.DomEvent.on(document, 'DOMContentLoaded', function () {
+    geoq.init(), geoq.iframe();
+  });
+
+window.getCityData = function (cityName) {
+  for (let i = 0; i < _cityData.length; i++) {
+    var item = _cityData[i];
+    if (item['city'] === cityName) {
+      return item;
+    }
+  }
+};
+window.viewPic = function (cityName) {
+  var city = getCityData(cityName);
+
+  var galley = document.getElementById('galley');
+  var viewer = new Viewer(galley, {
+    url: 'data-original',
+    hidden: function () {
+      viewer.destroy();
+    },
+  });
+  viewer.show();
+};
+
+window.generatePicHtml = function (cityName, urls) {
+  var _html =
+    '<div id="galley"><ul class="pictures" onclick="viewPic(\'' +
+    cityName +
+    '\')">';
+  for (var i = 0; i < urls.length; i++) {
+    var url = './data/pictures/' + urls[i];
+    var display = 'style="display:inline-block"';
+    if (i > 5) {
+      display = 'style="display:none"';
+    }
+    _html +=
+      '<li ' +
+      display +
+      '><img data-original="' +
+      url +
+      '" src="' +
+      url +
+      '" alt="图片预览"></li>';
+  }
+  _html += '</ul></div></div>';
+
+  return _html;
+};
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+
+__webpack_require__(0);
+__webpack_require__(5);
+__webpack_require__(6);
+
+/***/ })
+/******/ ]);

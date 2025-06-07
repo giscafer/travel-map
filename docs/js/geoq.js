@@ -16,10 +16,9 @@ var geoq = {
       attributionControl: !1,
     });
     // .setView([1.05463, 87.85938], 3);
-    var t =
-      'http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer';
-    L.tileLayer
-      .esriTileLayer(t, {
+    var darkUrl = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
+    L.tileLayer(darkUrl, {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         opacity: 1,
         zIndex: 0,
       })

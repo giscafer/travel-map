@@ -17,6 +17,7 @@
       href="lib/leaflet-0.7.3/leaflet.css"
     />
     <link rel="stylesheet" type="text/css" href="lib/viewerjs/viewer.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/css">
       .accordion {
         width: 60px;
@@ -24,122 +25,140 @@
         top: 0;
         right: 0;
         z-index: 888;
-        background: #fff;
-        border-bottom-left-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-bottom-left-radius: 16px;
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
       }
-      .accordion .accordion-btn {
-        background-color: #fff;
-        color: #333;
-        cursor: pointer;
-        padding: 12px;
-        width: 100%;
-        text-align: left;
-        border: none;
-        outline: none;
-        font-size: 14px;
-        width: 80px;
-        transition: all 0.3s ease;
-      }
       .accordion.active {
-        width: 360px;
+        width: 400px;
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
       }
       .accordion .accordion-panel {
         display: none;
-        padding: 10px 24px 32px 24px;
-        height: 600px;
+        height: calc(100vh - 50px);
         overflow-y: auto;
         overflow-x: hidden;
+        position: relative;
       }
-
       .accordion.active .accordion-panel {
         display: block;
-      }
-
-      /* 定义列表项的样式 */
-      .list-item {
-        padding: 12px 16px;
-        border-bottom: 1px solid #eee;
-        cursor: pointer;
-        border-radius: 8px;
-        margin-bottom: 8px;
-        transition: all 0.2s ease;
-      }
-      
-      .list-item:hover {
-        background-color: #f5f5f5;
-        transform: translateX(4px);
-      }
-
-      .list-item .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 4px;
-      }
-
-      .list-item .city {
-        font-weight: 500;
-        color: #333;
-      }
-
-      .list-item .date {
-        color: #666;
-        font-size: 13px;
-      }
-
-      /* 定义展开内容的样式 */
-      .expand-content {
-        display: none;
-        padding: 12px;
-        background: #f9f9f9;
-        border-radius: 8px;
-        margin-top: 8px;
-        color: #666;
-        font-size: 14px;
-        line-height: 1.6;
-        white-space: normal;
-        word-wrap: break-word;
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      /* 定义悬浮提示框的样式 */
-      .tooltip {
-        position: absolute;
-        background-color: #fff;
-        border-radius: 6px;
-        padding: 8px 12px;
-        display: none;
-        z-index: 999;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-        font-size: 13px;
-        color: #666;
-        max-width: 280px;
-        line-height: 1.5;
-        white-space: normal;
-        word-wrap: break-word;
       }
 
       /* 滚动条样式 */
       .accordion-panel::-webkit-scrollbar {
         width: 6px;
       }
-
       .accordion-panel::-webkit-scrollbar-track {
         background: #f1f1f1;
         border-radius: 3px;
       }
-
       .accordion-panel::-webkit-scrollbar-thumb {
         background: #ccc;
         border-radius: 3px;
       }
-
       .accordion-panel::-webkit-scrollbar-thumb:hover {
         background: #999;
+      }
+      
+      /* 图片预览样式 */
+      .thumbnail-img {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      .thumbnail-img:hover {
+        transform: scale(1.05);
+      }
+      
+      /* 移除列表项的 marker 样式 */
+      .list-item {
+        list-style: none;
+      }
+      .list-item::marker {
+        display: none;
+        content: none;
+      }
+      
+      /* Footer 统计信息样式 */
+      #list-footer {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.98);
+        z-index: 10;
+        padding-bottom: 30px;
+      }
+      .stat-item {
+        transition: all 0.3s ease;
+        cursor: default;
+      }
+      .stat-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* 展开/收起按钮样式优化 */
+      .accordion-btn {
+        position: relative;
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        min-height: 60px;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .accordion-btn:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+      .accordion-btn:active {
+        transform: scale(0.95);
+      }
+      .accordion-btn .toggle-icon {
+        width: 24px;
+        height: 24px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        color: white;
+        flex-shrink: 0;
+      }
+      .accordion-btn .toggle-icon-menu {
+        opacity: 1;
+        display: block;
+      }
+      .accordion-btn .toggle-icon-close {
+        opacity: 0;
+        display: none;
+        position: absolute;
+      }
+      .accordion.active .accordion-btn .toggle-icon-menu {
+        opacity: 0;
+        display: none;
+      }
+      .accordion.active .accordion-btn .toggle-icon-close {
+        opacity: 1;
+        display: block;
+        position: relative;
+      }
+      .accordion-btn .toggle-text {
+        color: white;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        transition: opacity 0.3s ease;
+      }
+      .accordion:not(.active) .accordion-btn .toggle-text {
+        opacity: 0;
+        display: none;
+      }
+      .accordion.active .accordion-btn .toggle-text {
+        opacity: 1;
+        display: block;
       }
     </style>
   </head>
@@ -147,9 +166,81 @@
     <div id="mapcontainer">
       <!-- 列表容器 -->
       <div class="accordion">
-        <button class="accordion-btn">展开&or;</button>
+        <button class="accordion-btn">
+          <!-- 展开状态图标（菜单） -->
+          <svg class="toggle-icon toggle-icon-menu" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <!-- 收起状态图标（关闭） -->
+          <svg class="toggle-icon toggle-icon-close hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+          <span class="toggle-text">列表</span>
+        </button>
         <div class="accordion-panel">
+          <!-- 搜索框 -->
+          <div class="p-2 border-b border-gray-200 bg-white sticky top-0 z-10">
+            <div class="relative">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="搜索景点、描述..."
+                class="w-full px-4 py-2 pl-10 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+              <svg
+                class="absolute left-3 top-2.5 w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+          </div>
+          <!-- 列表内容 -->
+          <div id="list-container" class="p-4">
           <!-- 这里放要展开/收起的内容 -->
+          </div>
+          <!-- 空状态 -->
+          <div id="empty-state" class="hidden p-8 text-center text-gray-500">
+            <svg
+              class="mx-auto h-12 w-12 text-gray-400 mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <p class="text-sm">未找到匹配的景点</p>
+          </div>
+          
+          <!-- Footer 统计信息 -->
+          <div id="list-footer" class="border-t border-gray-200 bg-white p-2 sticky bottom-0 shadow-lg">
+            <div class="grid grid-cols-3 gap-1 text-center">
+              <div class="stat-item p-1 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200">
+                <div class="text-xl font-bold text-purple-600 mb-0.5" id="total-count">0</div>
+                <div class="text-[10px] text-gray-600 font-medium">总足迹</div>
+              </div>
+              <div class="stat-item p-1 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200">
+                <div class="text-xl font-bold text-blue-600 mb-0.5" id="total-cities">0</div>
+                <div class="text-[10px] text-gray-600 font-medium">城市数</div>
+              </div>
+              <div class="stat-item p-1 rounded-lg bg-gradient-to-br from-green-50 to-green-100 border border-green-200">
+                <div class="text-xl font-bold text-green-600 mb-0.5" id="total-images">0</div>
+                <div class="text-[10px] text-gray-600 font-medium">照片数</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -160,13 +251,41 @@
       <!-- 定义模板 -->
       <script type="text/template" id="list-template">
         {{#data}}
-        <div class="list-item" data-longitude={{longitude}} data-latitude={{latitude}}>
-          <div class="header">
-            <span class="city">{{city}}</span>
-            <span class="date">{{date}}</span>
+        <div class="list-item mb-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-200 cursor-pointer" 
+             data-longitude="{{longitude}}" 
+             data-latitude="{{latitude}}"
+             data-city="{{city}}"
+             data-remark="{{remark}}"
+             data-imgs="{{imgs}}">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-base font-semibold text-gray-800 flex-1">
+              <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-xs font-bold text-white bg-blue-500 rounded-full">{{index}}</span>
+              {{city}}
+            </h3>
+            {{#date}}
+            <span class="text-xs text-gray-500 ml-2 whitespace-nowrap">{{date}}</span>
+            {{/date}}
           </div>
-          <div class="tooltip">{{remark}}</div>
-          <div class="expand-content">{{remark}}</div>
+          
+          {{#hasImgs}}
+          <div class="mb-3 flex gap-2 overflow-x-auto pb-2 image-gallery" data-imgs="{{imgsJson}}">
+            {{#imgsArray}}
+            <img 
+              src="{{imgPath}}" 
+              alt="{{../city}}"
+              class="thumbnail-img w-24 h-24 object-cover rounded-lg border-2 border-gray-200 hover:border-blue-400 flex-shrink-0 shadow-sm hover:shadow-md transition-all duration-200"
+              loading="lazy"
+              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\'%3E%3Crect fill=\'%23ddd\' width=\'96\' height=\'96\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\' font-size=\'12\'%3E无图%3C/text%3E%3C/svg%3E'"
+            />
+            {{/imgsArray}}
+          </div>
+          {{/hasImgs}}
+          
+          {{#remark}}
+          <div class="mt-2 p-3 bg-gray-50 rounded-md">
+            <p class="text-sm text-gray-600 leading-relaxed whitespace-pre-wrap">{{remark}}</p>
+          </div>
+          {{/remark}}
         </div>
         {{/data}}
       </script>
@@ -177,44 +296,223 @@
     <!--  mustache 模板引擎库 -->
     <script src="https://unpkg.com/mustache@4.2.0/mustache.js"></script>
     <script>
-      function genDataListHtml(data) {
-        // 将数据填充到模板中
-        var template = $('#list-template').html();
-        var html = Mustache.render(template, { data: data });
-        $('.accordion-panel').html(html);
+      let allData = []; // 存储所有数据
+      let filteredData = []; // 存储过滤后的数据
 
-        // 绑定点击事件
-        $('.list-item').click(function () {
-          $(this).toggleClass('active');
-          $(this).find('.expand-content').slideToggle();
-          const el = $(this);
-          const longitude = el.attr('data-longitude');
-          const latitude = el.attr('data-latitude');
-          var latlng = L.latLng(latitude - 0, longitude - 0);
-          console.log(latlng);
+      // 处理图片数据，准备模板数据
+      function processImageData(data) {
+        return data.map(function(item, index) {
+          // 确保imgs是数组
+          let imgs = [];
+          if (item.imgs) {
+            if (Array.isArray(item.imgs)) {
+              imgs = item.imgs;
+            } else if (typeof item.imgs === 'string') {
+              try {
+                imgs = JSON.parse(item.imgs);
+              } catch (e) {
+                imgs = [item.imgs];
+              }
+            }
+          }
+          
+          // 处理图片路径
+          const imgsArray = imgs.map(function(img) {
+            // 如果图片路径以./开头，去掉./
+            let imgPath = img;
+            if (imgPath.startsWith('./')) {
+              imgPath = imgPath.substring(2);
+            }
+            // 确保路径以data/imgs/开头
+            if (!imgPath.startsWith('data/pictures/')) {
+              imgPath = 'data/pictures/' + imgPath;
+            }
+            return {
+              imgPath: imgPath
+            };
+          });
+          return {
+            ...item,
+            index: index + 1, // 序号从1开始
+            hasImgs: imgs.length > 0,
+            imgsArray: imgsArray,
+            imgsJson: JSON.stringify(imgs) // 用于data属性
+          };
+        });
+      }
+
+      // 搜索过滤函数
+      function filterData(searchTerm) {
+        if (!searchTerm || searchTerm.trim() === '') {
+          return allData;
+        }
+        
+        const term = searchTerm.toLowerCase().trim();
+        return allData.filter(function(item) {
+          // 搜索城市名
+          if (item.city && item.city.toLowerCase().includes(term)) {
+            return true;
+          }
+          // 搜索描述
+          if (item.remark && item.remark.toLowerCase().includes(term)) {
+            return true;
+          }
+          // 搜索图片文件名
+          if (item.imgs && Array.isArray(item.imgs)) {
+            for (let i = 0; i < item.imgs.length; i++) {
+              if (item.imgs[i].toLowerCase().includes(term)) {
+                return true;
+              }
+            }
+          }
+          return false;
+        });
+      }
+
+      // 计算统计数据
+      function calculateStats(data) {
+        const stats = {
+          totalCount: data.length,
+          totalCities: 0,
+          totalImages: 0
+        };
+        
+        const citySet = new Set();
+        
+        data.forEach(function(item) {
+          // 统计城市数（去重）
+          if (item.city) {
+            citySet.add(item.city);
+          }
+          
+          // 统计图片数
+          if (item.imgs) {
+            if (Array.isArray(item.imgs)) {
+              stats.totalImages += item.imgs.length;
+            } else if (typeof item.imgs === 'string') {
+              try {
+                const imgs = JSON.parse(item.imgs);
+                stats.totalImages += Array.isArray(imgs) ? imgs.length : 1;
+              } catch (e) {
+                stats.totalImages += 1;
+              }
+            }
+          }
+        });
+        
+        stats.totalCities = citySet.size;
+        return stats;
+      }
+      
+      // 更新Footer统计信息
+      function updateFooterStats(data) {
+        const stats = calculateStats(data);
+        $('#total-count').text(stats.totalCount);
+        $('#total-cities').text(stats.totalCities);
+        $('#total-images').text(stats.totalImages);
+      }
+
+      // 渲染列表
+      function renderList(data) {
+        const template = $('#list-template').html();
+        const processedData = processImageData(data);
+        const html = Mustache.render(template, { data: processedData });
+        $('#list-container').html(html);
+        
+        // 更新统计信息
+        updateFooterStats(data);
+        
+        // 显示/隐藏空状态
+        if (data.length === 0) {
+          $('#empty-state').removeClass('hidden');
+          $('#list-container').addClass('hidden');
+        } else {
+          $('#empty-state').addClass('hidden');
+          $('#list-container').removeClass('hidden');
+        }
+
+        // 绑定列表项点击事件（定位地图）
+        $('.list-item').on('click', function(e) {
+          // 如果点击的是图片或图片容器，不触发定位（让图片查看器处理）
+          if ($(e.target).hasClass('thumbnail-img') || 
+              $(e.target).closest('.image-gallery').length ||
+              $(e.target).tagName === 'IMG') {
+            return;
+          }
+          
+          const $item = $(this);
+          
+          // 定位地图
+          const longitude = parseFloat($item.attr('data-longitude'));
+          const latitude = parseFloat($item.attr('data-latitude'));
+          
+          if (!isNaN(longitude) && !isNaN(latitude) && window.travelMap) {
+            const latlng = L.latLng(latitude, longitude);
           window.travelMap.panTo(latlng);
-          window.travelMap.setZoom(8);
+            window.travelMap.setZoom(10);
+          }
         });
 
-        // // 绑定悬浮事件
-        // $('.list-item').hover(
-        //   function () {
-        //     var tooltip = $(this).find('.tooltip');
-        //     tooltip
-        //       .css({
-        //         top: $(this).offset().top - tooltip.outerHeight() - 5,
-        //         left:
-        //           $(this).offset().left +
-        //           $(this).outerWidth() / 2 -
-        //           tooltip.outerWidth() / 2,
-        //       })
-        //       .show();
-        //   },
-        //   function () {
-        //     $(this).find('.tooltip').hide();
-        //   },
-        // );
+        // 初始化图片查看器
+        initImageViewer();
       }
+
+      // 初始化图片查看器
+      function initImageViewer() {
+        // 销毁之前的实例
+        if (window.viewerInstances && Array.isArray(window.viewerInstances)) {
+          window.viewerInstances.forEach(function(instance) {
+            try {
+              if (instance && typeof instance.destroy === 'function') {
+                instance.destroy();
+              }
+            } catch (e) {
+              // 忽略销毁错误
+            }
+          });
+        }
+        window.viewerInstances = [];
+
+        // 为每个有图片的列表项创建查看器
+        $('.image-gallery').each(function() {
+          const $gallery = $(this);
+          const imgs = $gallery.attr('data-imgs');
+          
+          if (imgs && $gallery.find('img').length > 0) {
+            try {
+              // 使用Viewer.js初始化图片查看器
+              const viewer = new Viewer($gallery[0], {
+                url: 'src',
+                navbar: false,
+                toolbar: {
+                  zoomIn: true,
+                  zoomOut: true,
+                  oneToOne: true,
+                  reset: true,
+                  prev: true,
+                  play: false,
+                  next: true,
+                  rotateLeft: true,
+                  rotateRight: true,
+                  flipHorizontal: true,
+                  flipVertical: true,
+                },
+              });
+              window.viewerInstances.push(viewer);
+            } catch (e) {
+              console.error('Error initializing image viewer:', e);
+            }
+          }
+        });
+      }
+
+      // 生成列表HTML
+      function genDataListHtml(data) {
+        allData = data;
+        filteredData = data;
+        renderList(data);
+      }
+
       $(function () {
         // 获取data数据后再执行模板渲染
         $.get(
@@ -223,15 +521,31 @@
             genDataListHtml(data.rows);
           },
         );
-        $('.accordion-btn').click(function () {
-          const el = $(this).parent();
-          el.toggleClass('active');
-          if (el.hasClass('active')) {
-            $(this).html('收起&and;');
+
+        // 搜索框输入事件
+        $('#search-input').on('input', function() {
+          const searchTerm = $(this).val();
+          filteredData = filterData(searchTerm);
+          renderList(filteredData);
+        });
+
+        // 展开/收起按钮
+        $('.accordion-btn').on('click', function() {
+          const $accordion = $(this).parent();
+          const $toggleText = $(this).find('.toggle-text');
+          
+          $accordion.toggleClass('active');
+          if ($accordion.hasClass('active')) {
+            $toggleText.text('收起');
           } else {
-            $(this).html('展开&or;');
+            $toggleText.text('列表');
           }
         });
+        
+        // 初始化按钮文本
+        if (!$('.accordion').hasClass('active')) {
+          $('.accordion-btn .toggle-text').text('列表');
+        }
       });
     </script>
   <script type="text/javascript" src="giscafer.js"></script><script type="text/javascript" src="app.js"></script></body>

@@ -42,7 +42,7 @@
     },
     {
       "country": "中国",
-      "city": "咸阳市乾县——乾陵",
+      "city": "咸阳市乾县",
       "times": "1",
       "date": "2011年4月",
       "imgs": [
@@ -81,7 +81,7 @@
     },
     {
       "country": "中国",
-      "city": "宝鸡市——太白山",
+      "city": "太白山",
       "times": "1",
       "date": "2014年5月",
       "imgs": [
@@ -144,7 +144,7 @@
     },
     {
       "country": "中国",
-      "city": "福建省福州市",
+      "city": "福州市",
       "times": "2",
       "date": "2016年4月",
       "imgs": ["./fujian/fuzhou_1.jpg", "./fujian/fuzhou_2.jpg"],
@@ -361,7 +361,7 @@
       "country": "中国",
       "city": "香港",
       "times": "1",
-      "date": "2025-05-17",
+      "date": "2025/05/17",
       "imgs": [
         "hongkong/1.jpg",
         "hongkong/2.jpg",
@@ -370,6 +370,48 @@
       "remark": "香港迪士尼乐园位于大屿山，是世界上第五个迪士尼乐园，第一次去迪士尼，还不错",
       "longitude": "114.045231",
       "latitude": "22.312771"
+    },
+    {
+      "country": "中国",
+      "city": "上海",
+      "times": "1",
+      "date": "2025/12/11",
+      "imgs": [
+        "shanghai/1.jpg",
+        "shanghai/2.jpg",
+        "shanghai/3.jpg"
+      ],
+      "remark": "在苏宁环球酒店住3天，上海玩三天",
+      "longitude": "121.472644",
+      "latitude": "31.231785"
+    },
+    {
+      "country": "中国",
+      "city": "苏州",
+      "times": "1",
+      "date": "2025/12/14",
+      "imgs": [
+        "suzhou/1.jpg",
+        "suzhou/2.jpg"
+      ],
+      "remark": "从上海做高铁去苏州，去了平江路、苏州园林",
+      "longitude": "120.618582",
+      "latitude": "31.304930"
+    },
+    {
+      "country": "中国",
+      "city": "南京",
+      "times": "1",
+      "date": "2025/12/15",
+      "imgs": [
+        "nanjing/1.jpg",
+        "nanjing/2.jpg",
+        "nanjing/3.jpg",
+        "nanjing/4.jpg"
+      ],
+      "remark": "苏州动车去南京，南京接着玩了3天，南京博物院、总统府、南京大学、南京夫子庙、老门东、梧桐大道、世界啤酒博物馆等景点，吃了鸭血粉丝、南京大排档等，总体感觉南京很好玩，没逛完六朝古都的景点，期待下次再来",
+      "longitude": "118.796877",
+      "latitude": "32.060255"
     }
   ]
 }

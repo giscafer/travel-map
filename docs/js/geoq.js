@@ -15,8 +15,8 @@ var geoq = {
       maxZoom: 16,
       attributionControl: !1,
     });
-    // Free OSM tiles — no API token required
-    // (replaces GeoQ ChinaOnlineStreetPurplishBlue / CARTO dark basemaps)
+    // Free OSM tiles — no API token. Dark styling via CSS on .leaflet-tile-pane
+    // so yellow markers / flow effects stay readable on a dark basemap.
     var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     L.tileLayer(osmUrl, {
         attribution:
@@ -24,6 +24,7 @@ var geoq = {
         maxZoom: 19,
         opacity: 1,
         zIndex: 0,
+        className: 'travel-map-tiles',
       })
       .addTo(this.map);
     var e = L.control.attribution();

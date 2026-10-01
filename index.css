@@ -7,7 +7,7 @@ html {
 #banner,
 #map {
     width: 100%;
-    background-color: #fff
+    background-color: #0b0b0b
 }
 
 #legend,
@@ -52,7 +52,12 @@ html {
 }
 
 .leaflet-container {
-    background: #fff
+    background: #0b0b0b
+}
+
+/* Darken basemap only; markers / flow canvas stay in other panes */
+.leaflet-tile-pane {
+    filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.95) saturate(0.7)
 }
 
 .pictures {

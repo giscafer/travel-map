@@ -138,7 +138,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "#map,\nbody,\nhtml {\n    height: 100%\n}\n\n#banner,\n#map {\n    width: 100%;\n    background-color: #fff\n}\n\n#legend,\n#map {\n    position: absolute\n}\n\n#banner,\n#legend {\n    background-repeat: no-repeat\n}\n\nbody,\nhtml {\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    overflow: hidden\n}\n\n.fontfix {\n    font-family: Arial, \"\\5FAE\\8F6F\\96C5\\9ED1\", \"Hiragino Sans GB\", \"\\65B0\\5B8B\\4F53\", sans-serif;\n    -webkit-font-smoothing: antialiased\n}\n\n.no-select {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none\n}\n\n#banner {\n    height: 0;\n    background-position: 0 0\n}\n\n#mapcontainer {\n    position: relative;\n    width: 100%;\n    height: 100%\n}\n\n.leaflet-container {\n    background: #fff\n}\n\n.pictures {\n    margin: 0;\n    margin-top: 10px;\n    padding: 0;\n    list-style: none;\n    max-width: 30rem;\n    display: flex;\n    justify-content: start;\n    white-space: pre-wrap;\n    flex-wrap: wrap;\n    min-width: 262px;\n}\n\n.pictures::after {\n    display: table;\n    content: ' ';\n    clear: both;\n}\n\n.pictures>li {\n    margin: 0 5px 2px 0;\n    border: 1px solid transparent;\n    overflow: hidden;\n}\n\n.pictures>li>img {\n    width: 100%;\n    cursor: -webkit-zoom-in;\n    cursor: zoom-in;\n}\n\n.viewer-download {\n    color: #fff;\n    font-family: FontAwesome;\n    font-size: .75rem;\n    line-height: 1.5rem;\n    text-align: center;\n}\n\n.viewer-download::before {\n    content: \"\\F019\";\n}\n\nul.pictures li img {\n    width: 80px;\n    height: 80px;\n}\n\n.leaflet-popup-content {\n    width: auto !important;\n}", ""]);
+exports.push([module.i, "#map,\nbody,\nhtml {\n    height: 100%\n}\n\n#banner,\n#map {\n    width: 100%;\n    background-color: #0b0b0b\n}\n\n#legend,\n#map {\n    position: absolute\n}\n\n#banner,\n#legend {\n    background-repeat: no-repeat\n}\n\nbody,\nhtml {\n    width: 100%;\n    margin: 0;\n    padding: 0;\n    overflow: hidden\n}\n\n.fontfix {\n    font-family: Arial, \"\\5FAE\\8F6F\\96C5\\9ED1\", \"Hiragino Sans GB\", \"\\65B0\\5B8B\\4F53\", sans-serif;\n    -webkit-font-smoothing: antialiased\n}\n\n.no-select {\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none\n}\n\n#banner {\n    height: 0;\n    background-position: 0 0\n}\n\n#mapcontainer {\n    position: relative;\n    width: 100%;\n    height: 100%\n}\n\n.leaflet-container {\n    background: #0b0b0b\n}\n\n/* Darken basemap only; markers / flow canvas stay in other panes */\n.leaflet-tile-pane {\n    filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.95) saturate(0.7)\n}\n\n.pictures {\n    margin: 0;\n    margin-top: 10px;\n    padding: 0;\n    list-style: none;\n    max-width: 30rem;\n    display: flex;\n    justify-content: start;\n    white-space: pre-wrap;\n    flex-wrap: wrap;\n    min-width: 262px;\n}\n\n.pictures::after {\n    display: table;\n    content: ' ';\n    clear: both;\n}\n\n.pictures>li {\n    margin: 0 5px 2px 0;\n    border: 1px solid transparent;\n    overflow: hidden;\n}\n\n.pictures>li>img {\n    width: 100%;\n    cursor: -webkit-zoom-in;\n    cursor: zoom-in;\n}\n\n.viewer-download {\n    color: #fff;\n    font-family: FontAwesome;\n    font-size: .75rem;\n    line-height: 1.5rem;\n    text-align: center;\n}\n\n.viewer-download::before {\n    content: \"\\F019\";\n}\n\nul.pictures li img {\n    width: 80px;\n    height: 80px;\n}\n\n.leaflet-popup-content {\n    width: auto !important;\n}", ""]);
 
 // exports
 
@@ -1335,8 +1335,8 @@ var geoq = {
       maxZoom: 16,
       attributionControl: !1,
     });
-    // Free OSM tiles — no API token required
-    // (replaces GeoQ ChinaOnlineStreetPurplishBlue / CARTO dark basemaps)
+    // Free OSM tiles — no API token. Dark styling via CSS on .leaflet-tile-pane
+    // so yellow markers / flow effects stay readable on a dark basemap.
     var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     L.tileLayer(osmUrl, {
         attribution:
@@ -1344,6 +1344,7 @@ var geoq = {
         maxZoom: 19,
         opacity: 1,
         zIndex: 0,
+        className: 'travel-map-tiles',
       })
       .addTo(this.map);
     var e = L.control.attribution();

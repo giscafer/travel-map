@@ -1335,15 +1335,21 @@ var geoq = {
       maxZoom: 16,
       attributionControl: !1,
     });
-    // .setView([1.05463, 87.85938], 3);
-    var darkUrl = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png';
-    L.tileLayer(darkUrl, {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    // Free OSM tiles — no API token required
+    // (replaces GeoQ ChinaOnlineStreetPurplishBlue / CARTO dark basemaps)
+    var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    L.tileLayer(osmUrl, {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19,
         opacity: 1,
         zIndex: 0,
       })
       .addTo(this.map);
     var e = L.control.attribution();
+    e.addAttribution(
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    );
     e.addAttribution('那些我去过的城市');
     e.addAttribution(
       '<a href="http://giscafer.com" target="_blank">@giscafer</a>',

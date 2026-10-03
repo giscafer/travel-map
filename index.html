@@ -17,114 +17,386 @@
       href="lib/leaflet-0.7.3/leaflet.css"
     />
     <link rel="stylesheet" type="text/css" href="lib/viewerjs/viewer.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/css">
+      :root {
+        --panel-bg: rgba(14, 16, 20, 0.92);
+        --panel-bg-soft: rgba(22, 25, 32, 0.88);
+        --panel-line: rgba(255, 255, 255, 0.08);
+        --panel-text: #f2efe8;
+        --panel-muted: #9a948a;
+        --accent: #ffc32c;
+        --accent-soft: rgba(255, 195, 44, 0.16);
+        --accent-glow: rgba(255, 195, 44, 0.28);
+      }
+
       .accordion {
-        width: 60px;
+        --sidebar-font: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+        --sidebar-display: 'Syne', 'Noto Sans SC', sans-serif;
+        width: 56px;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 12px;
+        right: 12px;
+        bottom: 12px;
         z-index: 888;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-bottom-left-radius: 16px;
-        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: var(--sidebar-font);
+        color: var(--panel-text);
+        background:
+          radial-gradient(120% 80% at 100% 0%, rgba(255, 195, 44, 0.12), transparent 55%),
+          linear-gradient(180deg, rgba(28, 31, 38, 0.96), var(--panel-bg));
+        border: 1px solid var(--panel-line);
+        border-radius: 18px;
+        box-shadow:
+          0 18px 48px rgba(0, 0, 0, 0.45),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        transition:
+          width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.35s ease;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
       }
       .accordion.active {
-        width: 400px;
-        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+        width: min(380px, calc(100vw - 24px));
+        box-shadow:
+          0 22px 60px rgba(0, 0, 0, 0.5),
+          0 0 0 1px rgba(255, 195, 44, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
       }
       .accordion .accordion-panel {
         display: none;
-        height: calc(100vh - 50px);
+        flex: 1;
+        min-height: 0;
         overflow-y: auto;
         overflow-x: hidden;
         position: relative;
+        background: transparent;
+        animation: panelIn 0.35s ease both;
       }
       .accordion.active .accordion-panel {
-        display: block;
+        display: flex;
+        flex-direction: column;
+      }
+      @keyframes panelIn {
+        from { opacity: 0; transform: translateX(12px); }
+        to { opacity: 1; transform: translateX(0); }
       }
 
-      /* 滚动条样式 */
       .accordion-panel::-webkit-scrollbar {
-        width: 6px;
+        width: 5px;
       }
       .accordion-panel::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 3px;
+        background: transparent;
       }
       .accordion-panel::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
       }
       .accordion-panel::-webkit-scrollbar-thumb:hover {
-        background: #999;
+        background: rgba(255, 195, 44, 0.45);
       }
-      
-      /* 图片预览样式 */
-      .thumbnail-img {
-        cursor: pointer;
-        transition: transform 0.2s ease;
+
+      .sidebar-search {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 14px 14px 12px;
+        background: linear-gradient(180deg, rgba(14, 16, 20, 0.98), rgba(14, 16, 20, 0.9));
+        border-bottom: 1px solid var(--panel-line);
       }
-      .thumbnail-img:hover {
-        transform: scale(1.05);
+      .sidebar-search-title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 10px;
       }
-      
-      /* 移除列表项的 marker 样式 */
+      .sidebar-search-title h2 {
+        margin: 0;
+        font-family: var(--sidebar-display);
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--panel-text);
+      }
+      .sidebar-search-title span {
+        font-size: 11px;
+        color: var(--accent);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .sidebar-search-field {
+        position: relative;
+      }
+      .sidebar-search-field input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 12px 10px 38px;
+        font-size: 13px;
+        color: var(--panel-text);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--panel-line);
+        border-radius: 12px;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+      .sidebar-search-field input::placeholder {
+        color: var(--panel-muted);
+      }
+      .sidebar-search-field input:focus {
+        background: rgba(255, 195, 44, 0.06);
+        border-color: rgba(255, 195, 44, 0.45);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+      }
+      .sidebar-search-field svg {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+        color: var(--panel-muted);
+        pointer-events: none;
+      }
+
+      #list-container {
+        padding: 10px 12px 16px;
+        flex: 1;
+      }
+
       .list-item {
         list-style: none;
+        position: relative;
+        margin: 0 0 10px;
+        padding: 14px 14px 14px 16px;
+        cursor: pointer;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid transparent;
+        transition:
+          background 0.22s ease,
+          border-color 0.22s ease,
+          transform 0.22s ease;
+        animation: itemIn 0.4s ease both;
+      }
+      .list-item:nth-child(1) { animation-delay: 0.02s; }
+      .list-item:nth-child(2) { animation-delay: 0.05s; }
+      .list-item:nth-child(3) { animation-delay: 0.08s; }
+      .list-item:nth-child(4) { animation-delay: 0.11s; }
+      .list-item:nth-child(5) { animation-delay: 0.14s; }
+      @keyframes itemIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .list-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 14px;
+        bottom: 14px;
+        width: 3px;
+        border-radius: 999px;
+        background: transparent;
+        transition: background 0.22s ease;
+      }
+      .list-item:hover {
+        background: rgba(255, 195, 44, 0.08);
+        border-color: rgba(255, 195, 44, 0.18);
+        transform: translateY(-1px);
+      }
+      .list-item:hover::before {
+        background: var(--accent);
       }
       .list-item::marker {
         display: none;
         content: none;
       }
-      
-      /* Footer 统计信息样式 */
+      .list-item-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+      .list-item-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--panel-text);
+        line-height: 1.35;
+      }
+      .list-item-index {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 24px;
+        height: 24px;
+        padding: 0 6px;
+        border-radius: 8px;
+        font-family: var(--sidebar-display);
+        font-size: 11px;
+        font-weight: 700;
+        color: #1a1400;
+        background: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+        flex-shrink: 0;
+      }
+      .list-item-date {
+        font-size: 11px;
+        color: var(--panel-muted);
+        white-space: nowrap;
+        letter-spacing: 0.02em;
+        padding-top: 3px;
+      }
+      .list-item-remark {
+        margin-top: 8px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.22);
+        border: 1px solid var(--panel-line);
+      }
+      .list-item-remark p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.65;
+        color: #e6dfd2;
+        white-space: pre-wrap;
+      }
+      .image-gallery {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        margin: 4px 0 2px;
+      }
+      .image-gallery::-webkit-scrollbar {
+        height: 4px;
+      }
+      .image-gallery::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.16);
+        border-radius: 999px;
+      }
+      .thumbnail-img {
+        width: 88px;
+        height: 66px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .thumbnail-img:hover {
+        transform: scale(1.04);
+        border-color: rgba(255, 195, 44, 0.65);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+      }
+
+      #empty-state {
+        padding: 48px 24px;
+        text-align: center;
+        color: var(--panel-muted);
+      }
+      #empty-state svg {
+        margin: 0 auto 12px;
+        width: 40px;
+        height: 40px;
+        color: rgba(255, 195, 44, 0.55);
+      }
+      #empty-state p {
+        margin: 0;
+        font-size: 13px;
+      }
+
       #list-footer {
-        backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.98);
+        position: sticky;
+        bottom: 0;
         z-index: 10;
-        padding-bottom: 30px;
+        margin-top: auto;
+        padding: 12px 14px 14px;
+        background: linear-gradient(180deg, rgba(14, 16, 20, 0.72), rgba(14, 16, 20, 0.98));
+        border-top: 1px solid var(--panel-line);
+        backdrop-filter: blur(12px);
+      }
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
       }
       .stat-item {
-        transition: all 0.3s ease;
+        text-align: center;
+        padding: 8px 4px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--panel-line);
         cursor: default;
+        transition: border-color 0.2s ease, background 0.2s ease;
       }
       .stat-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: var(--accent-soft);
+        border-color: rgba(255, 195, 44, 0.28);
       }
-      
-      /* 展开/收起按钮样式优化 */
+      .stat-item .stat-value {
+        font-family: var(--sidebar-display);
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.1;
+        color: var(--accent);
+        margin-bottom: 2px;
+      }
+      .stat-item .stat-label {
+        font-size: 10px;
+        color: var(--panel-muted);
+        letter-spacing: 0.06em;
+      }
+
       .accordion-btn {
         position: relative;
         background: transparent;
         border: none;
         outline: none;
         width: 100%;
-        min-height: 60px;
-        padding: 2px;
+        min-height: 56px;
+        padding: 12px 8px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         gap: 6px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: background 0.25s ease;
+        flex-shrink: 0;
+      }
+      .accordion.active .accordion-btn {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--panel-line);
+        min-height: 58px;
       }
       .accordion-btn:hover {
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba(255, 195, 44, 0.08);
       }
       .accordion-btn:active {
-        transform: scale(0.95);
+        transform: scale(0.98);
       }
       .accordion-btn .toggle-icon {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        color: white;
+        color: var(--accent);
         flex-shrink: 0;
+        filter: drop-shadow(0 0 8px var(--accent-glow));
       }
       .accordion-btn .toggle-icon-menu {
         opacity: 1;
@@ -145,10 +417,11 @@
         position: relative;
       }
       .accordion-btn .toggle-text {
-        color: white;
-        font-weight: 600;
-        font-size: 13px;
-        letter-spacing: 0.5px;
+        color: var(--panel-text);
+        font-family: var(--sidebar-display);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.04em;
         white-space: nowrap;
         transition: opacity 0.3s ease;
       }
@@ -160,39 +433,59 @@
         opacity: 1;
         display: block;
       }
+      .accordion-btn .toggle-label-collapsed {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        margin-top: 4px;
+      }
+      .accordion.active .accordion-btn .toggle-label-collapsed {
+        display: none;
+      }
+
+      @media (max-width: 640px) {
+        .accordion {
+          top: 8px;
+          right: 8px;
+          bottom: 8px;
+        }
+        .accordion.active {
+          width: calc(100vw - 16px);
+        }
+      }
     </style>
   </head>
   <body class="fontfix no-select">
     <div id="mapcontainer">
-      <!-- 列表容器 -->
+      <!-- 足迹侧栏 -->
       <div class="accordion">
-        <button class="accordion-btn">
-          <!-- 展开状态图标（菜单） -->
+        <button class="accordion-btn" type="button" aria-label="足迹列表">
           <svg class="toggle-icon toggle-icon-menu" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-          <!-- 收起状态图标（关闭） -->
           <svg class="toggle-icon toggle-icon-close hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
-          <span class="toggle-text">列表</span>
+          <span class="toggle-text">足迹</span>
+          <span class="toggle-label-collapsed">足迹</span>
         </button>
         <div class="accordion-panel">
-          <!-- 搜索框 -->
-          <div class="p-2 border-b border-gray-200 bg-white sticky top-0 z-10">
-            <div class="relative">
+          <div class="sidebar-search">
+            <div class="sidebar-search-title">
+              <h2>旅行足迹</h2>
+              <span>Travel Log</span>
+            </div>
+            <div class="sidebar-search-field">
               <input
                 type="text"
                 id="search-input"
-                placeholder="搜索景点、描述..."
-                class="w-full px-4 py-2 pl-10 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="搜索城市、备注..."
+                autocomplete="off"
               />
-              <svg
-                class="absolute left-3 top-2.5 w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -202,42 +495,31 @@
               </svg>
             </div>
           </div>
-          <!-- 列表内容 -->
-          <div id="list-container" class="p-4">
-          <!-- 这里放要展开/收起的内容 -->
-          </div>
-          <!-- 空状态 -->
-          <div id="empty-state" class="hidden p-8 text-center text-gray-500">
-            <svg
-              class="mx-auto h-12 w-12 text-gray-400 mb-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+          <div id="list-container"></div>
+          <div id="empty-state" class="hidden">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                stroke-width="2"
+                stroke-width="1.8"
                 d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <p class="text-sm">未找到匹配的景点</p>
+            <p>未找到匹配的足迹</p>
           </div>
-          
-          <!-- Footer 统计信息 -->
-          <div id="list-footer" class="border-t border-gray-200 bg-white p-2 sticky bottom-0 shadow-lg">
-            <div class="grid grid-cols-3 gap-1 text-center">
-              <div class="stat-item p-1 rounded-lg bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200">
-                <div class="text-xl font-bold text-purple-600 mb-0.5" id="total-count">0</div>
-                <div class="text-[10px] text-gray-600 font-medium">总足迹</div>
+          <div id="list-footer">
+            <div class="stats-row">
+              <div class="stat-item">
+                <div class="stat-value" id="total-count">0</div>
+                <div class="stat-label">总足迹</div>
               </div>
-              <div class="stat-item p-1 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200">
-                <div class="text-xl font-bold text-blue-600 mb-0.5" id="total-cities">0</div>
-                <div class="text-[10px] text-gray-600 font-medium">城市数</div>
+              <div class="stat-item">
+                <div class="stat-value" id="total-cities">0</div>
+                <div class="stat-label">城市</div>
               </div>
-              <div class="stat-item p-1 rounded-lg bg-gradient-to-br from-green-50 to-green-100 border border-green-200">
-                <div class="text-xl font-bold text-green-600 mb-0.5" id="total-images">0</div>
-                <div class="text-[10px] text-gray-600 font-medium">照片数</div>
+              <div class="stat-item">
+                <div class="stat-value" id="total-images">0</div>
+                <div class="stat-label">照片</div>
               </div>
             </div>
           </div>
@@ -251,39 +533,39 @@
       <!-- 定义模板 -->
       <script type="text/template" id="list-template">
         {{#data}}
-        <div class="list-item mb-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-200 cursor-pointer" 
-             data-longitude="{{longitude}}" 
+        <div class="list-item"
+             data-longitude="{{longitude}}"
              data-latitude="{{latitude}}"
              data-city="{{city}}"
              data-remark="{{remark}}"
              data-imgs="{{imgs}}">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-base font-semibold text-gray-800 flex-1">
-              <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-xs font-bold text-white bg-blue-500 rounded-full">{{index}}</span>
-              {{city}}
+          <div class="list-item-head">
+            <h3 class="list-item-title">
+              <span class="list-item-index">{{index}}</span>
+              <span>{{city}}</span>
             </h3>
             {{#date}}
-            <span class="text-xs text-gray-500 ml-2 whitespace-nowrap">{{date}}</span>
+            <span class="list-item-date">{{date}}</span>
             {{/date}}
           </div>
-          
+
           {{#hasImgs}}
-          <div class="mb-3 flex gap-2 overflow-x-auto pb-2 image-gallery" data-imgs="{{imgsJson}}">
+          <div class="image-gallery" data-imgs="{{imgsJson}}">
             {{#imgsArray}}
-            <img 
-              src="{{imgPath}}" 
+            <img
+              src="{{imgPath}}"
               alt="{{../city}}"
-              class="thumbnail-img w-24 h-24 object-cover rounded-lg border-2 border-gray-200 hover:border-blue-400 flex-shrink-0 shadow-sm hover:shadow-md transition-all duration-200"
+              class="thumbnail-img"
               loading="lazy"
-              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\'%3E%3Crect fill=\'%23ddd\' width=\'96\' height=\'96\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\' font-size=\'12\'%3E无图%3C/text%3E%3C/svg%3E'"
+              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'88\' height=\'66\'%3E%3Crect fill=\'%232a2d35\' width=\'88\' height=\'66\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%239a948a\' font-size=\'11\'%3E无图%3C/text%3E%3C/svg%3E'"
             />
             {{/imgsArray}}
           </div>
           {{/hasImgs}}
-          
+
           {{#remark}}
-          <div class="mt-2 p-3 bg-gray-50 rounded-md">
-            <p class="text-sm text-gray-600 leading-relaxed whitespace-pre-wrap">{{remark}}</p>
+          <div class="list-item-remark">
+            <p>{{remark}}</p>
           </div>
           {{/remark}}
         </div>
@@ -538,13 +820,13 @@
           if ($accordion.hasClass('active')) {
             $toggleText.text('收起');
           } else {
-            $toggleText.text('列表');
+            $toggleText.text('足迹');
           }
         });
         
         // 初始化按钮文本
         if (!$('.accordion').hasClass('active')) {
-          $('.accordion-btn .toggle-text').text('列表');
+          $('.accordion-btn .toggle-text').text('足迹');
         }
       });
     </script>

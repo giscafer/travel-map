@@ -40,10 +40,11 @@
         --sidebar-font: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
         --sidebar-display: 'Syne', 'Noto Sans SC', sans-serif;
         width: 56px;
+        height: fit-content;
         position: absolute;
         top: 12px;
         right: 12px;
-        bottom: 12px;
+        bottom: auto;
         z-index: 888;
         font-family: var(--sidebar-font);
         color: var(--panel-text);
@@ -66,6 +67,8 @@
       }
       .accordion.active {
         width: min(380px, calc(100vw - 24px));
+        height: auto;
+        bottom: 12px;
         box-shadow:
           0 22px 60px rgba(0, 0, 0, 0.5),
           0 0 0 1px rgba(255, 195, 44, 0.08),
@@ -450,10 +453,10 @@
         .accordion {
           top: 8px;
           right: 8px;
-          bottom: 8px;
         }
         .accordion.active {
           width: calc(100vw - 16px);
+          bottom: 8px;
         }
       }
     </style>
